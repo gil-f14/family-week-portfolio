@@ -1,0 +1,38 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*token*.json
+
+# Private product and deployment material
+.openai/
+*.log
+*.db
+*.sqlite
+coverage/
+dist/
+out/
+.next/
+.vinext/
+node_modules/
+
+# Personal media and calendar exports
+*.ics
+*.ical
+*.heic
+*.heif
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.pdf
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
