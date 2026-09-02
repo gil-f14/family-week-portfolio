@@ -2,7 +2,7 @@
 
 **Review date:** September 2026  
 **Release under review:** Documentation-only employer portfolio  
-**Decision:** Safe to continue private staging; public visibility requires human review and explicit final approval.
+**Decision:** Approved for public release after human review and explicit owner approval. The application source and live service remain private.
 
 ## Scope
 
@@ -12,7 +12,7 @@ The release contains nine text documentation files and no application source, pr
 
 | Review area | Result | Evidence or limitation |
 | --- | --- | --- |
-| Repository visibility | Passed | GitHub reported the portfolio repository as private before review actions |
+| Repository visibility | Passed | The repository began private and became public only after the documented gate and explicit owner approval |
 | Complete-history secret scan | Passed | Checksum-verified Gitleaks 8.30.1 reported zero findings in the portfolio history |
 | Private application history secret scan | Passed | The same verified scanner reported zero findings; this does not authorize publishing that repository |
 | PII and contextual identifier scan | Passed | Zero matches for known names, accounts, emails, phone-like values, locations, private domains, cloud identifiers, key headers, and credential assignments |
@@ -24,7 +24,8 @@ The release contains nine text documentation files and no application source, pr
 | Private application license inventory | Review recorded | Predominantly permissive licenses; reciprocal and missing-metadata transitive packages require an SBOM and notices before distributing application source or binaries |
 | Automated code quality | Passed | Production build, lint, and all 66 automated tests passed |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
-| GitHub built-in secret scanning | Compensating control | Unavailable while this personal repository is private; enable secret scanning and push protection immediately if it becomes public |
+| GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |
+| Private vulnerability reporting | Enabled | GitHub's private vulnerability-reporting channel was enabled at public release |
 | Accessibility conformance | Not yet claimed | Automated and source-level evidence passed; a low-contrast timeline label was remediated to a 5.15:1 contrast ratio. Manual assistive-technology and responsive-state testing remains |
 | Live calendar end-to-end test | Pending human session | Requires an authorized test-calendar session and explicit review of the disposable event |
 
@@ -44,13 +45,12 @@ The documentation portfolio uses an **All rights reserved** notice. This is the 
 
 ## Residual risks and required actions
 
-1. The repository owner must read the rendered documents and confirm the narrative and public identity are intentional.
-2. Public visibility must be approved in a separate final decision after this report is reviewed.
-3. If approved, immediately enable GitHub secret scanning, push protection, and private vulnerability reporting, then re-run the history and PII scans.
-4. Keep application source, private deployment configuration, photographs, screenshots, calendar exports, and operational logs out of this repository.
-5. Before distributing application source or binaries, generate an SBOM, resolve license metadata, create third-party notices, complete a threat model, and perform independent security testing.
-6. Before claiming accessibility conformance or broader production readiness, complete the documented manual accessibility and live calendar tests.
+1. Keep GitHub secret scanning, push protection, dependency alerts, automatic security updates, and private vulnerability reporting enabled.
+2. Re-run the release scans before adding screenshots, media, source code, generated artifacts, or external links.
+3. Keep application source, private deployment configuration, photographs, screenshots, calendar exports, and operational logs out of this repository.
+4. Before distributing application source or binaries, generate an SBOM, resolve license metadata, create third-party notices, complete a threat model, and perform independent security testing.
+5. Before claiming accessibility conformance or broader production readiness, complete the documented manual accessibility and live calendar tests.
 
 ## Release recommendation
 
-The documentation-only portfolio is suitable for continued **private employer-review staging**. It is not approved for public visibility until the repository owner completes the human review and explicitly accepts the residual risks. The private application repository is not approved for publication.
+The documentation-only portfolio passed its release gate and was approved for public visibility. This approval does not extend to the private application repository, application deployment, household data, or operational artifacts.

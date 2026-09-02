@@ -135,11 +135,12 @@ If sensitive data is discovered:
 | License decision | Complete — All rights reserved |
 | Private GitHub staging | Complete |
 | Dependency alerts and automatic security updates | Enabled |
-| Built-in secret scanning and push protection | Pending — unavailable while private; enable immediately after any approved public transition |
-| Human owner review of rendered GitHub documents | Pending |
-| Explicit approval immediately before public visibility | Pending |
+| Built-in secret scanning and push protection | Complete — enabled immediately at public release |
+| Private vulnerability reporting | Complete — enabled immediately at public release |
+| Human owner review of rendered GitHub documents | Complete |
+| Explicit approval immediately before public visibility | Complete |
 
-The documentation pack is ready for private employer review. This result does not make the application source or working repository public-safe.
+The documentation pack completed the public-release gate. This result does not make the application source or working repository public-safe.
 
 ### Full public source repository
 
