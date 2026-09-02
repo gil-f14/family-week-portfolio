@@ -126,13 +126,20 @@ If sensitive data is discovered:
 | Required evidence | Result |
 | --- | --- |
 | PRD, one-pager, architecture, project plan, and readiness matrix agree on scope | Complete |
-| Known household names, account strings, private domains, addresses, and cloud identifiers pattern scan | Passed |
-| Email, phone, private-key header, and common credential pattern scan | Passed |
+| GitHub Markdown rendering and local-link validation | Passed |
+| Checksum-verified Gitleaks scan of complete portfolio history | Passed — zero findings |
+| Known household names, account strings, private domains, addresses, and cloud identifiers pattern scan | Passed — zero findings |
+| Email, phone, private-key header, and common credential pattern scan | Passed — zero findings |
 | Binary-file inventory inside the documentation pack | Passed — no binary files |
 | AI-assisted line-by-line content review | Complete |
+| License decision | Complete — All rights reserved |
+| Private GitHub staging | Complete |
+| Dependency alerts and automatic security updates | Enabled |
+| Built-in secret scanning and push protection | Pending — unavailable while private; enable immediately after any approved public transition |
 | Human owner review of rendered GitHub documents | Pending |
+| Explicit approval immediately before public visibility | Pending |
 
-The documentation pack is ready for private GitHub staging after the human owner review. This result does not make the application source or working repository public-safe.
+The documentation pack is ready for private employer review. This result does not make the application source or working repository public-safe.
 
 ### Full public source repository
 
