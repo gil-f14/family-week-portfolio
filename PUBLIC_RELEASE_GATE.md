@@ -11,7 +11,10 @@ This gate is informed by:
 - [NIST Cybersecurity Framework 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20): Govern, Identify, Protect, Detect, Respond, and Recover.
 - [NIST SP 800-122](https://csrc.nist.gov/pubs/sp/800/122/final): identify PII, assess confidentiality impact, apply safeguards, and prepare for incidents.
 - [NIST SP 800-218 SSDF 1.1](https://csrc.nist.gov/pubs/sp/800/218/final): integrate secure practices into the software development lifecycle.
-- [NIST Privacy Framework](https://www.nist.gov/privacy-framework): inventory data processing, define target privacy outcomes, verify them before release, and reassess over time.
+- [NIST Privacy Framework 1.0](https://www.nist.gov/privacy-framework): inventory data processing, define target privacy outcomes, verify them before release, and reassess over time. Version 1.1 remains an Initial Public Draft as of this review and is monitored, not claimed as the baseline.
+- [NIST AI Risk Management Framework 1.0](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10): govern, map, measure, and manage OCR risks with visible uncertainty and human review. NIST is revising AI RMF 1.0, so the mapping must be revisited when a final successor is published.
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/): target Level AA for the complete responsive experience; do not claim conformance until full-page automated and manual evaluation is complete.
+- [OWASP ASVS 5.0.0](https://owasp.org/www-project-application-security-verification-standard/): use as a future application-security verification baseline only after selecting a level and completing a requirement-by-requirement assessment.
 
 This is a practical NIST-aligned control set for a small portfolio project. It is not a certification, legal opinion, compliance attestation, or substitute for an independent security assessment.
 
@@ -118,6 +121,21 @@ If sensitive data is discovered:
 
 ## Final release record
 
+### Sanitized documentation pack
+
+| Required evidence | Result |
+| --- | --- |
+| PRD, one-pager, architecture, project plan, and readiness matrix agree on scope | Complete |
+| Known household names, account strings, private domains, addresses, and cloud identifiers pattern scan | Passed |
+| Email, phone, private-key header, and common credential pattern scan | Passed |
+| Binary-file inventory inside the documentation pack | Passed — no binary files |
+| AI-assisted line-by-line content review | Complete |
+| Human owner review of rendered GitHub documents | Pending |
+
+The documentation pack is ready for private GitHub staging after the human owner review. This result does not make the application source or working repository public-safe.
+
+### Full public source repository
+
 | Required evidence | Result |
 | --- | --- |
 | Clean export created without prior Git history | Pending |
@@ -131,4 +149,3 @@ If sensitive data is discovered:
 | Explicit approval to publish | Pending |
 
 Public release remains **BLOCKED** while any result is Pending, Failed, Unknown, or Not Reviewed.
-
