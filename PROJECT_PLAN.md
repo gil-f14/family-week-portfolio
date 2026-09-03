@@ -63,6 +63,7 @@ Estimates assume one product owner working with AI-assisted engineering and incl
 - Access stays owner-only unless a separate access change is explicitly approved.
 - Public GitHub publication uses a new clean repository and new history.
 - Standards claims are evidence-based and use “aligned,” “partially aligned,” or “target” until formal validation is complete.
+- Security events follow the sanitized operations runbook; credential rotation precedes history cleanup, and calendar recovery always requires owner approval.
 
 ## Risks and mitigations
 
