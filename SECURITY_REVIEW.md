@@ -28,7 +28,7 @@ The release is a documentation-only Markdown collection with no application sour
 | GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |
 | Private vulnerability reporting | Enabled | GitHub's private vulnerability-reporting channel was enabled at public release |
 | Accessibility conformance | Not yet claimed | Automated and source-level evidence passed; a low-contrast timeline label was remediated to a 5.15:1 contrast ratio. Manual assistive-technology and responsive-state testing remains |
-| Response and recovery readiness | Documented, not exercised | The sanitized security-operations runbook defines severity targets, minimal-evidence rules, incident playbooks, and recovery gates; tabletop and operating evidence remain pending |
+| Response and recovery readiness | Synthetic decision exercise completed; operations not exercised | The sanitized runbook and tabletop cover severity, minimal evidence, containment, credential rotation, notification escalation, and recovery gates; actual alerting, access containment, rotation, and rollback remain pending |
 | Privacy-impact assessment | Completed for engineering scope | The synthetic assessment inventories processing, retention intent, individual controls, external recipients, risks, and broader-access conditions; independent privacy and legal review remain pending |
 | Shared-device disposal control | Implemented and automatically scoped | A two-step control targets only enumerated application storage; supported-device manual verification remains pending |
 | Live calendar end-to-end test | Pending human session | Requires an authorized isolated test-calendar session and explicit review of the disposable event |
@@ -54,7 +54,7 @@ The documentation portfolio uses an **All rights reserved** notice. This is the 
 3. Keep application source, private deployment configuration, photographs, screenshots, calendar exports, and operational logs out of this repository.
 4. Before distributing application source or binaries, validate the private SBOM, resolve license metadata, package applicable license texts and notices, and perform independent license and security testing.
 5. Complete the OWASP ASVS 5.0.0 Level 2 requirement trace and resolve all critical or high-risk gaps before claiming verification.
-6. Exercise the security-operations runbook with synthetic data and retain sanitized evidence.
+6. Run the remaining authorized operational drill for alerting, access containment, credential rotation, and rollback; retain sanitized evidence and close tabletop corrective actions.
 7. Before claiming accessibility conformance or broader production readiness, complete the documented manual accessibility and live calendar tests.
 
 ## Release recommendation

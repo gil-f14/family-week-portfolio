@@ -98,6 +98,7 @@ The separate [privacy-safe monitoring plan](PRIVACY_SAFE_MONITORING_PLAN.md) def
 
 ## Exercises and maintenance
 
+- Use the [synthetic incident tabletop](SYNTHETIC_INCIDENT_TABLETOP.md) as the baseline scenario and corrective-action record; it validates decision logic only, not operating performance.
 - Run a sanitized tabletop exercise at least annually and after a material identity or hosting change.
 - Test credential revocation, private-access restoration, and repository containment without using live calendar data.
 - Review this runbook after incidents, major architecture changes, and changes to applicable notification duties.
