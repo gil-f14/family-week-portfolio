@@ -68,5 +68,5 @@ Week / agenda display and safe app-owned deletion
 - Device-local drafts and dictionary entries do not yet synchronize.
 - Shared-device identity and recovery require a formal account design.
 - Full telemetry is intentionally limited; privacy-safe service health measures need definition.
-- Formal threat modeling, software composition reporting, and independent penetration testing remain future controls.
-
+- A baseline threat model is documented; independent review and penetration testing remain future controls.
+- Software composition reporting and third-party notice generation remain future controls.
