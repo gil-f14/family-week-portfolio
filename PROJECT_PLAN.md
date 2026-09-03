@@ -12,7 +12,8 @@
 | Aug 28, 2026 | V1 private release | Batch validation, all-calendar duplicate checks, retry recovery, release criteria | V1 release decision and production-readiness checklist |
 | Aug 29, 2026 | Safety and portfolio controls | Safe-delete specification and public-release gate | Sanitization and disclosure controls documented |
 | Aug 30–Sep 1, 2026 | V2 core | Quick add, one-hour default, safe deletion, read-only overlays, weather on request, mobile calendar, colors, full-day scrolling, tablet display mode | Feature tests and private iterative deployments |
-| Sep 1–2, 2026 | Accessibility hardening | Mobile chooser containment, dialog focus management, keyboard dismissal, spoken event-date context | 65 automated tests passing and private deployment |
+| Sep 1–2, 2026 | Accessibility hardening | Mobile chooser containment, dialog focus management, keyboard dismissal, spoken event-date context | Automated accessibility evidence and private deployment |
+| Sep 2–3, 2026 | Assurance package | Public documentation release, threat model, private SBOM and software inventory, accessibility record, synthetic end-to-end test plan | Sanitized evidence, clean history scans, and automated regression coverage |
 
 Internal hosting revision numbers and deployment identifiers are intentionally excluded from the public portfolio.
 
@@ -34,12 +35,12 @@ Planned. Automatic weather presentation, place autocomplete, and advanced shared
 
 | Timing | Workstream | Deliverables | Exit criteria |
 | --- | --- | --- | --- |
-| Week 1 | Product verification | Create/duplicate/delete test, readable-calendar confirmation, defect triage | No incorrect calendar mutations; priority defects resolved |
+| Week 1 | Product verification | Execute the prepared synthetic create/duplicate/retry/delete plan, confirm readable calendars, triage defects | No incorrect calendar mutations; priority defects resolved |
 | Week 1–2 | Accessibility validation | Keyboard, screen reader, zoom/reflow, contrast, touch targets, portrait/landscape | Test record completed; blockers fixed; remaining issues documented |
-| Week 2 | Security evidence | Threat model, dependency/license review, vulnerability scan, secret and PII scans | No unresolved critical/high finding; evidence retained privately |
-| Week 2–3 | Portfolio clean export | Synthetic examples, sanitized documentation, new Git history, private GitHub staging | All public-release gates pass except final owner approval |
+| Week 2 | Security evidence | Resolve review-required license metadata and obtain independent review of the completed baseline evidence | No unresolved critical/high finding; distribution obligations documented |
+| Week 2–3 | Portfolio maintenance | Keep synthetic documentation, scans, and new Git history current | Public-release controls remain enabled and every update passes the gate |
 | Week 3 | Employer presentation | Final case study, architecture graphic, optional synthetic screenshots, interview walkthrough | Narrative reviewed for accuracy and privacy |
-| Week 4 | Release decision | Manual review and explicit decision to keep private or publish portfolio | Approval recorded; monitoring owner assigned |
+| Week 4 | Application release decision | Review private-pilot evidence; keep application private or approve a separately scoped access change | Approval recorded; monitoring owner assigned |
 
 ## V3 planning horizon
 
@@ -81,4 +82,3 @@ Estimates assume one product owner working with AI-assisted engineering and incl
 - Claims can be traced to implementation or test evidence.
 - Known limitations and unfinished verification are visible.
 - The public repository begins private, contains new history, and receives explicit approval before publication.
-
