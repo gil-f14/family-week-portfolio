@@ -74,4 +74,4 @@ Week / agenda display and safe app-owned deletion
 - Full telemetry is intentionally limited; privacy-safe service health measures need definition.
 - A baseline threat model, ASVS Level 2 readiness map, and security-operations runbook are documented; independent review, penetration testing, and a sanitized exercise remain future controls.
 - Software composition reporting is automated, but review-required license metadata must be resolved before application source or binary distribution.
-- Live security-header capture plus manual accessibility, supported-device, and synthetic calendar testing remain release evidence gaps.
+- Live security-header evidence is recorded; manual accessibility, supported-device, synthetic calendar, and independent TLS testing remain release evidence gaps.

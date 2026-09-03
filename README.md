@@ -15,9 +15,10 @@ This directory is the public-safe narrative for Family Week. It describes the pr
 9. [Synthetic end-to-end test plan](SYNTHETIC_E2E_TEST_PLAN.md) — safe live-calendar verification and cleanup procedure.
 10. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
 11. [Security operations runbook](SECURITY_OPERATIONS_RUNBOOK.md) — severity targets, minimal-evidence rules, incident playbooks, and recovery gates.
-12. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
-13. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
-14. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
+12. [Live security-header record](LIVE_SECURITY_HEADER_RECORD.md) — sanitized read-only evidence from the private deployment and its limitations.
+13. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
+14. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
+15. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
 
 ## Publication boundary
 

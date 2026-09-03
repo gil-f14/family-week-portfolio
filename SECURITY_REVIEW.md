@@ -23,6 +23,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Private application dependency advisory scan | Passed | Production dependency audit reported zero critical, high, moderate, low, or informational advisories at review time |
 | Private application license inventory | Review recorded | A machine-readable SBOM and draft third-party inventory are retained privately; review-required license entries must be resolved before distributing application source or binaries |
 | Automated release preflight | Passed | Lint, production build, the full automated test suite, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
+| Live response-header verification | Passed for sampled paths | Read-only checks of the private root page and non-mutating authentication-status API matched the documented policy; independent TLS evaluation remains pending |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
 | GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |
 | Private vulnerability reporting | Enabled | GitHub's private vulnerability-reporting channel was enabled at public release |
