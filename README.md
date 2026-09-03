@@ -9,10 +9,11 @@ This directory is the public-safe narrative for Family Week. It describes the pr
 3. [Architecture one-pager](ARCHITECTURE_ONE_PAGER.md) — system boundaries and key design decisions.
 4. [Program and release plan](PROJECT_PLAN.md) — completed milestones, release gates, and forward plan.
 5. [Compliance readiness](COMPLIANCE_READINESS.md) — evidence-based standards mapping and known gaps.
-6. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
-7. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
-8. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
-9. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
+6. [Accessibility test record](ACCESSIBILITY_TEST_RECORD.md) — completed automated evidence, contrast results, and the required human test matrix.
+7. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
+8. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
+9. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
+10. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
 
 ## Publication boundary
 

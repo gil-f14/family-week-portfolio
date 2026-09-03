@@ -16,7 +16,7 @@
 | Framework or standard | Current posture | Evidence in the product | What is still required |
 | --- | --- | --- | --- |
 | [NIST Cybersecurity Framework 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20) | Partially aligned | Governance rules, data boundaries, least privilege, protective controls, failure states, rollback, and incident steps map across Govern, Identify, Protect, Detect, Respond, and Recover | Formal organizational profile, risk register, ownership, metrics, and periodic review |
-| [NIST SP 800-218 SSDF 1.1](https://csrc.nist.gov/pubs/sp/800/218/final) | Partially aligned | Pinned dependencies, integrity-checked OCR assets, reviewed changes, automated tests, build gates, and documented release rules | Formal threat model, vulnerability-management SLA, SBOM, provenance record, and independent security testing |
+| [NIST SP 800-218 SSDF 1.1](https://csrc.nist.gov/pubs/sp/800/218/final) | Partially aligned | Pinned dependencies, integrity-checked OCR assets, reviewed changes, automated tests, build gates, baseline threat model, private SBOM, and documented release rules | Vulnerability-management SLA, provenance record, license resolution, and independent security testing |
 | [NIST SP 800-122](https://csrc.nist.gov/pubs/sp/800/122/final) | Strong design alignment | Local photo processing, data minimization, owner-only hosting, prohibited-public-data list, clean-export rule, and incident response | Documented PII confidentiality-impact assessment, retention schedule, access review, and incident exercise |
 | [NIST Privacy Framework 1.0](https://www.nist.gov/privacy-framework) | Partially aligned | Data inventory, processing boundaries, minimization, user review, private-by-default operation, and release gates | Complete current/target profile, privacy risk assessment, deletion policy, notices, and lifecycle metrics; monitor the public 1.1 draft rather than claiming it as final |
 | [NIST AI RMF 1.0](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) | Partially aligned for OCR | Human review, visible uncertainty, bounded inputs, source comparison, confidence handling, local correction, and failure-safe behavior align to Govern, Map, Measure, and Manage concepts | Document model limitations, representative evaluation set, accuracy measures, bias/accessibility review, monitoring, and change criteria; AI RMF 1.0 is currently under revision |
@@ -82,11 +82,9 @@
 
 ## Priority evidence backlog
 
-1. Complete a lightweight threat model and data-flow review.
-2. Run dependency, secret, PII, and license scans on the clean export.
-3. Create an accessibility test record covering every supported responsive state.
-4. Record an end-to-end calendar create, duplicate, and delete test using synthetic data.
-5. Select an OWASP ASVS verification level and map only the applicable requirements.
-6. Create NIST CSF and Privacy Framework current/target profiles with named owners.
-7. Obtain independent review before upgrading any readiness statement to a conformance claim.
-
+1. Execute the pending human and supported-device rows in the accessibility test record.
+2. Resolve the private software inventory's review-required license entries before any application distribution.
+3. Record an end-to-end calendar create, duplicate, and delete test using synthetic data.
+4. Select an OWASP ASVS verification level and map only the applicable requirements.
+5. Create NIST CSF and Privacy Framework current/target profiles with named owners.
+6. Obtain independent review before upgrading any readiness statement to a conformance claim.
