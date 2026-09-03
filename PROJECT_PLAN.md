@@ -39,7 +39,7 @@ Planned. Automatic weather presentation, place autocomplete, and advanced shared
 | --- | --- | --- | --- |
 | Week 1 | Product verification | Execute the prepared synthetic create/duplicate/retry/delete plan, confirm readable calendars, triage defects | No incorrect calendar mutations; priority defects resolved |
 | Week 1–2 | Accessibility validation | Keyboard, screen reader, zoom/reflow, contrast, touch targets, portrait/landscape | Test record completed; blockers fixed; remaining issues documented |
-| Week 2 | Security and privacy evidence | Resolve review-required license metadata and obtain independent review of the completed baseline and privacy-impact assessment | No unresolved critical/high finding; distribution obligations and retention decisions documented |
+| Week 2 | Security and privacy evidence | Complete qualified disposition of the prepared 11-row license worksheet and independently review the baseline and privacy-impact assessment | No unresolved critical/high finding; distribution obligations and retention decisions documented |
 | Week 2–3 | Portfolio maintenance | Keep synthetic documentation, scans, and new Git history current | Public-release controls remain enabled and every update passes the gate |
 | Week 3 | Employer presentation | Final case study, architecture graphic, optional synthetic screenshots, interview walkthrough | Narrative reviewed for accuracy and privacy |
 | Week 4 | Application release decision | Review private-pilot evidence; keep application private or approve a separately scoped access change | Approval recorded; monitoring owner assigned |

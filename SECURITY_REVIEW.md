@@ -21,7 +21,7 @@ The release is a documentation-only Markdown collection with no application sour
 | GitHub Markdown rendering | Passed | Every Markdown file rendered through GitHub's official renderer; local links resolved, tables rendered, and no script tags appeared |
 | Dependency exposure in portfolio | Not applicable | The documentation-only repository has no package manifest, executable dependency, or deployment workflow |
 | Private application dependency advisory scan | Passed | Production dependency audit reported zero critical, high, moderate, low, or informational advisories at review time |
-| Private application license inventory | Review recorded | A machine-readable SBOM and draft third-party inventory are retained privately; review-required license entries must be resolved before distributing application source or binaries |
+| Private application license inventory | Engineering triage recorded; distribution blocked | A machine-readable SBOM, third-party inventory, and 11-row review worksheet are retained privately; every legal disposition remains open before distributing application source or binaries |
 | Automated release preflight | Passed | Lint, production build, the full automated test suite, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
 | Live response-header verification | Passed for sampled paths | Read-only checks of the private root page and non-mutating authentication-status API matched the documented policy; independent TLS evaluation remains pending |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
