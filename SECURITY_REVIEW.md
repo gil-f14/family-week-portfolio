@@ -21,7 +21,7 @@ The release contains nine text documentation files and no application source, pr
 | GitHub Markdown rendering | Passed | Every Markdown file rendered through GitHub's official renderer; local links resolved, tables rendered, and no script tags appeared |
 | Dependency exposure in portfolio | Not applicable | The documentation-only repository has no package manifest, executable dependency, or deployment workflow |
 | Private application dependency advisory scan | Passed | Production dependency audit reported zero critical, high, moderate, low, or informational advisories at review time |
-| Private application license inventory | Review recorded | Predominantly permissive licenses; reciprocal and missing-metadata transitive packages require an SBOM and notices before distributing application source or binaries |
+| Private application license inventory | Review recorded | A machine-readable SBOM and draft third-party inventory are retained privately; review-required license entries must be resolved before distributing application source or binaries |
 | Automated code quality | Passed | Production build, lint, and all 66 automated tests passed |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
 | GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |
@@ -48,7 +48,7 @@ The documentation portfolio uses an **All rights reserved** notice. This is the 
 1. Keep GitHub secret scanning, push protection, dependency alerts, automatic security updates, and private vulnerability reporting enabled.
 2. Re-run the release scans before adding screenshots, media, source code, generated artifacts, or external links.
 3. Keep application source, private deployment configuration, photographs, screenshots, calendar exports, and operational logs out of this repository.
-4. Before distributing application source or binaries, generate an SBOM, resolve license metadata, create third-party notices, complete a threat model, and perform independent security testing.
+4. Before distributing application source or binaries, validate the private SBOM, resolve license metadata, package applicable license texts and notices, and perform independent license and security testing.
 5. Before claiming accessibility conformance or broader production readiness, complete the documented manual accessibility and live calendar tests.
 
 ## Release recommendation
