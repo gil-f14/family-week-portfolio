@@ -41,7 +41,10 @@ Week / agenda display and safe app-owned deletion
 - OAuth state and PKCE protect the authorization flow.
 - Refresh credentials are sealed with authenticated encryption in a secure, HTTP-only cookie.
 - A strict Content Security Policy limits browser network destinations and keeps OCR assets same-origin.
+- The deployed-worker policy blocks framing, restricts cross-origin resource use, adds HTTPS transport protection, and prevents API-response caching.
+- State-changing calendar and authenticated weather requests require an exact same-origin request and JSON content type.
 - OCR dependencies and models are version-pinned and integrity-checked before build.
+- One pinned package manager and lockfile define the build; the release preflight rejects dependency drift and competing lockfiles.
 - Image type, size, edge length, and total pixels are bounded.
 - All event batches are validated before the first write.
 - Deterministic event identifiers and semantic duplicate checks make retries safer.
@@ -62,11 +65,13 @@ Week / agenda display and safe app-owned deletion
 - Google Calendar API for OAuth, calendar reads, duplicate checks, and app-owned writes/deletes.
 - Browser-based PaddleOCR with ONNX Runtime Web and self-hosted model assets.
 - Node.js automated tests for domain rules, integrations, source guards, and rendered safety messages.
+- A private CycloneDX SBOM and third-party inventory generated from the installed dependency graph.
 
 ## Known architecture gaps
 
 - Device-local drafts and dictionary entries do not yet synchronize.
 - Shared-device identity and recovery require a formal account design.
 - Full telemetry is intentionally limited; privacy-safe service health measures need definition.
-- A baseline threat model is documented; independent review and penetration testing remain future controls.
-- Software composition reporting and third-party notice generation remain future controls.
+- A baseline threat model, ASVS Level 2 readiness map, and security-operations runbook are documented; independent review, penetration testing, and a sanitized exercise remain future controls.
+- Software composition reporting is automated, but review-required license metadata must be resolved before application source or binary distribution.
+- Live security-header capture plus manual accessibility, supported-device, and synthetic calendar testing remain release evidence gaps.
