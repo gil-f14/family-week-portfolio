@@ -13,7 +13,7 @@
 | Aug 29, 2026 | Safety and portfolio controls | Safe-delete specification and public-release gate | Sanitization and disclosure controls documented |
 | Aug 30–Sep 1, 2026 | V2 core | Quick add, one-hour default, safe deletion, read-only overlays, weather on request, mobile calendar, colors, full-day scrolling, tablet display mode | Feature tests and private iterative deployments |
 | Sep 1–2, 2026 | Accessibility hardening | Mobile chooser containment, dialog focus management, keyboard dismissal, spoken event-date context | Automated accessibility evidence and private deployment |
-| Sep 2–3, 2026 | Assurance package | Public documentation release, threat model, private SBOM and software inventory, accessibility record, synthetic end-to-end test plan, NIST engineering profile | Sanitized evidence, prioritized gaps, clean history scans, and automated regression coverage |
+| Sep 2–3, 2026 | Assurance package | Public documentation release, threat model, private SBOM and software inventory, accessibility record, synthetic end-to-end test plan, NIST engineering profile, and OWASP ASVS Level 2 readiness matrix | Sanitized evidence, prioritized gaps, clean history scans, and automated regression coverage |
 
 Internal hosting revision numbers and deployment identifiers are intentionally excluded from the public portfolio.
 
