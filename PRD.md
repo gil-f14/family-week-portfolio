@@ -81,6 +81,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 - Tablet-focused display mode and device-local view preferences.
 - Calendar chooser contained within the mobile viewport and dismissible outside.
 - Scrollable day range through midnight with a sticky all-day row.
+- Two-step **Clear this device** control removes local drafts, learned corrections, calendar-display choices, color rules, and the current photo preview without deleting Google Calendar events or ending the Google connection.
 
 ### Accessibility requirements
 
@@ -97,6 +98,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 - 200% and 400% zoom/reflow testing, contrast verification, and orientation testing.
 - Approved end-to-end create, duplicate, edit-review, and delete test.
 - Confirmation of the intended readable-calendar set.
+- Manual verification of the clear-device flow on each supported browser and device.
 
 ## V3 — Planned
 
@@ -140,4 +142,3 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 ## Release definition
 
 A release is eligible for private deployment only when the production build and automated tests pass, owner-only access is confirmed, and no unapproved live calendar mutation is performed. A public portfolio release follows the separate clean-export gate and never exposes the private working repository.
-

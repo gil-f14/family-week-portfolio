@@ -66,7 +66,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 | Tampering | Event fields or identifiers changed after review | Server validation, bounded fields, reviewed-event requirement, safe identifier validation | Add structured security-event logging without event content |
 | Tampering | Delete races with a later calendar edit | Re-fetch, app-ownership verification, revision comparison, two confirmations | Complete live synthetic concurrency test |
 | Repudiation | Calendar mutation cannot be reconstructed | Deterministic identifiers and explicit review flow | Define content-free audit events, retention, access, and deletion policy |
-| Information disclosure | Photograph or OCR text leaves the device | Browser-based OCR, no photo upload, same-origin model assets, bounded local draft | Shared-device users must clear local data; formalize a privacy-preserving reset flow |
+| Information disclosure | Photograph or OCR text remains on a shared device | Browser-based OCR, no photo upload, bounded local draft, and a two-step app-scoped device reset | Verify the reset on supported devices and educate shared-device users to run it |
 | Information disclosure | OAuth credential or calendar content reaches logs or public source | Sealed credential, private source, no-sensitive-logging rule, history scans, public release gate | Add automated log-field tests and an incident response exercise |
 | Information disclosure | Public portfolio reveals operational details | Documentation-only allowlist, synthetic content, PII and secret scans, separate Git history | Re-run the release gate before every new media or source addition |
 | Denial of service | Oversized or adversarial image exhausts browser resources | File-size, edge-length, pixel-count, and OCR confidence limits | Add measured performance budgets and service-side request throttling where supported |
@@ -88,7 +88,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 
 ## Highest residual risks
 
-1. A lost or shared unlocked device can expose device-local drafts and dictionary entries.
+1. A lost or shared unlocked device can expose device-local drafts and dictionary entries until the user runs the available clear-device control.
 2. Manual accessibility and supported-device testing has not been completed.
 3. Live create, duplicate, retry, revision-conflict, and delete behavior still requires an approved synthetic end-to-end test.
 4. Privacy-safe operational monitoring and audit retention are not fully defined.
