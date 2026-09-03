@@ -59,6 +59,7 @@ Estimates assume one product owner working with AI-assisted engineering and incl
 - Every release has an explicit scope, acceptance criteria, and rollback path.
 - Live calendar mutations require human authorization during testing.
 - Build and tests must pass before private deployment.
+- A single automated release preflight gates lint, production build, tests, security-inventory freshness, and portfolio sanitization before deployment.
 - Access stays owner-only unless a separate access change is explicitly approved.
 - Public GitHub publication uses a new clean repository and new history.
 - Standards claims are evidence-based and use “aligned,” “partially aligned,” or “target” until formal validation is complete.
