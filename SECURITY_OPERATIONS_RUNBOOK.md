@@ -92,6 +92,10 @@ Before reopening the private pilot:
 - repository, hosting, and calendar access remain least privilege; and
 - monitoring and rollback ownership are recorded.
 
+## Monitoring boundary
+
+The separate [privacy-safe monitoring plan](PRIVACY_SAFE_MONITORING_PLAN.md) defines the only approved application-event fields, prohibited content, starting thresholds, retention targets, and activation tests. The plan is a specification, not proof of operating detection. Alerts must remain content-free and route back to this runbook; they must never trigger automatic calendar mutation or recovery.
+
 ## Exercises and maintenance
 
 - Run a sanitized tabletop exercise at least annually and after a material identity or hosting change.
