@@ -29,6 +29,8 @@ The release is a documentation-only Markdown collection with no application sour
 | Private vulnerability reporting | Enabled | GitHub's private vulnerability-reporting channel was enabled at public release |
 | Accessibility conformance | Not yet claimed | Automated and source-level evidence passed; a low-contrast timeline label was remediated to a 5.15:1 contrast ratio. Manual assistive-technology and responsive-state testing remains |
 | Response and recovery readiness | Documented, not exercised | The sanitized security-operations runbook defines severity targets, minimal-evidence rules, incident playbooks, and recovery gates; tabletop and operating evidence remain pending |
+| Privacy-impact assessment | Completed for engineering scope | The synthetic assessment inventories processing, retention intent, individual controls, external recipients, risks, and broader-access conditions; independent privacy and legal review remain pending |
+| Shared-device disposal control | Implemented and automatically scoped | A two-step control targets only enumerated application storage; supported-device manual verification remains pending |
 | Live calendar end-to-end test | Pending human session | Requires an authorized isolated test-calendar session and explicit review of the disposable event |
 
 ## License decision
@@ -39,7 +41,7 @@ The documentation portfolio uses an **All rights reserved** notice. This is the 
 
 - **NIST CSF 2.0:** this review supports Govern, Identify, Protect, Detect, Respond, and Recover outcomes through scoped release ownership, data classification, preventive controls, scans, a security-operations runbook, and rollback/private-first staging.
 - **NIST SP 800-218 SSDF 1.1:** the release uses reviewed changes, repeatable validation, dependency review, and secure release gates; a formal organization-wide SSDF assessment has not been performed.
-- **NIST SP 800-122 and Privacy Framework 1.0:** data minimization, contextual PII scanning, no-production-data rules, and incident procedures support alignment; no certification is claimed.
+- **NIST SP 800-122 and Privacy Framework 1.0:** data minimization, contextual PII scanning, no-production-data rules, an engineering privacy-impact assessment, scoped device-data disposal, and incident procedures support alignment; independent review and approved policy evidence remain, and no certification is claimed.
 - **NIST AI RMF 1.0:** human review and visible uncertainty govern the private application's OCR use; the public portfolio contains no model or household data.
 - **WCAG 2.2 AA:** target only. Full conformance requires evaluation of every responsive state with automated and human testing.
 - **Section 508:** not claimed. Applicability and complete testing must be established for a covered federal use.
