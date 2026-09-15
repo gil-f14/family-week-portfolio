@@ -1,6 +1,6 @@
 # Family Week — Product Requirements Document
 
-**Document status:** Portfolio edition 1.0  
+**Document status:** Portfolio edition 1.1
 **Product stage:** Private pilot; V1 complete, V2 core complete, V3 planned  
 **Audience:** Product, program, design, engineering, security, and prospective employers
 
@@ -94,6 +94,8 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 - Never use color as the sole indicator of owner, warning, duplicate, or status.
 
 ### Remaining V2 acceptance work
+
+The current automated release gate passes 97 tests, including reduced-motion behavior, accessibility source guards, calendar safety boundaries, privacy controls, and build-artifact screening. This evidence does not replace the human checks below.
 
 - Manual keyboard-only walkthrough on every core flow.
 - VoiceOver testing on a supported iPhone/iPad and screen-reader testing on desktop.

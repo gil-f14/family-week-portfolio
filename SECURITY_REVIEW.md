@@ -1,6 +1,6 @@
 # Family Week — Portfolio Security Review
 
-**Review date:** September 3, 2026
+**Review date:** September 15, 2026
 **Release under review:** Documentation-only employer portfolio  
 **Decision:** Approved for public release after human review and explicit owner approval. The application source and live service remain private.
 
@@ -21,8 +21,8 @@ The release is a documentation-only Markdown collection with no application sour
 | GitHub Markdown rendering | Passed | Every Markdown file rendered through GitHub's official renderer; local links resolved, tables rendered, and no script tags appeared |
 | Dependency exposure in portfolio | Not applicable | The documentation-only repository has no package manifest, executable dependency, or deployment workflow |
 | Private application dependency advisory scan | Passed | Production dependency audit reported zero critical, high, moderate, low, or informational advisories at review time |
-| Private application license inventory | Candidate notice assembled; distribution blocked | A machine-readable SBOM, third-party inventory, artifact trace, candidate notice bundle, and 11-row review worksheet are retained privately. Automated evidence confirms one flagged component in emitted browser JavaScript; the current exact-build identifier scan found no development/build identifiers, but exact-archive exclusion, notice validation, and every qualified legal disposition remain open before distributing application source or binaries |
-| Automated release preflight | Passed | Lint, production build, the full automated test suite, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
+| Private application license inventory | Candidate notice assembled; distribution blocked | A machine-readable SBOM, third-party inventory, artifact trace, candidate notice bundle, and 11-row review worksheet are retained privately. Automated evidence confirms one flagged component in emitted browser JavaScript; the current exact-build identifier scan found no development/build identifiers, but exact packaged-archive confirmation, notice validation, and every qualified legal disposition remain open before distributing application source or binaries |
+| Automated release preflight | Passed | Lint, production build, all 97 automated tests, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
 | Live response-header verification | Passed for sampled paths | Read-only checks of the private root page and non-mutating authentication-status API matched the documented policy; independent TLS evaluation remains pending |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
 | GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |

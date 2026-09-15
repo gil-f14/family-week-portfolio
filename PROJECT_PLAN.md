@@ -17,6 +17,7 @@
 | Sep 3, 2026 | Shared-device privacy control | Consolidated two-step disposal of app-specific drafts, learned terms, photo preview, and display preferences | Exact-key scope test, updated privacy assessment, and private deployment |
 | Sep 3, 2026 | Incident decision exercise | Synthetic access-expansion and credential-exposure tabletop | Sanitized decision record, recovery gates, and corrective-action backlog |
 | Sep 2026 | Privacy and retention governance | Current-versus-target retention schedule, seven-day inactive local-draft expiry, and concise privacy notice draft | Automated boundary tests, documented user controls, approval gaps, and supported-device verification plan |
+| Sep 15, 2026 | Production-readiness evidence refresh | Reduced-motion handling and exact-build dependency-identifier screening | 97-test release gate, updated accessibility record, and claim-bounded supply-chain evidence |
 
 Internal hosting revision numbers and deployment identifiers are intentionally excluded from the public portfolio.
 
@@ -28,7 +29,7 @@ Complete for private pilot use. The core photo-to-reviewed-calendar workflow, du
 
 ### V2
 
-Feature-complete at the core level. Manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
+Feature-complete at the core level. The automated release gate currently passes 97 tests, including reduced-motion and build-artifact screening. Manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
 
 ### V3
 
@@ -40,7 +41,7 @@ Planned. Automatic weather presentation, place autocomplete, and advanced shared
 | --- | --- | --- | --- |
 | Week 1 | Product verification | Execute the prepared synthetic create/duplicate/retry/delete plan, confirm readable calendars, triage defects | No incorrect calendar mutations; priority defects resolved |
 | Week 1–2 | Accessibility validation | Keyboard, screen reader, zoom/reflow, contrast, touch targets, portrait/landscape | Test record completed; blockers fixed; remaining issues documented |
-| Week 2 | Security and privacy evidence | Obtain qualified approval of the assembled notice candidate, confirm exclusion of ten flagged development/build paths from the exact release archive, complete disposition of the 11-row license worksheet, and independently review the baseline and privacy-impact assessment | No unresolved critical/high finding; distribution obligations and retention decisions documented |
+| Week 2 | Security and privacy evidence | Obtain qualified approval of the assembled notice candidate, use the completed exact-build identifier scan as supporting evidence, confirm exclusion of ten flagged development/build paths from the exact release archive, complete disposition of the 11-row license worksheet, and independently review the baseline and privacy-impact assessment | No unresolved critical/high finding; distribution obligations and retention decisions documented |
 | Week 2–3 | Portfolio maintenance | Keep synthetic documentation, scans, and new Git history current | Public-release controls remain enabled and every update passes the gate |
 | Week 3 | Employer presentation | Final case study, architecture graphic, optional synthetic screenshots, interview walkthrough | Narrative reviewed for accuracy and privacy |
 | Week 4 | Application release decision | Review private-pilot evidence; keep application private or approve a separately scoped access change | Approval recorded; monitoring owner assigned |
