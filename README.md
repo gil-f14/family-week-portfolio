@@ -21,11 +21,12 @@ This directory is the public-safe narrative for Family Week. It describes the pr
 15. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
 16. [Security operations runbook](SECURITY_OPERATIONS_RUNBOOK.md) — severity targets, minimal-evidence rules, incident playbooks, and recovery gates.
 17. [Vulnerability management plan](VULNERABILITY_MANAGEMENT_PLAN.md) — private intake, severity targets, remediation lifecycle, evidence boundaries, and expiring exceptions.
-18. [Synthetic incident tabletop](SYNTHETIC_INCIDENT_TABLETOP.md) — access and credential incident decisions, results, gaps, and operational-drill boundaries.
-19. [Live security-header record](LIVE_SECURITY_HEADER_RECORD.md) — sanitized read-only evidence from the private deployment and its limitations.
-20. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
-21. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
-22. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
+18. [Synthetic vulnerability tabletop](SYNTHETIC_VULNERABILITY_TABLETOP.md) — decision-path exercise for intake, containment, exception expiry, verification, and closure.
+19. [Synthetic incident tabletop](SYNTHETIC_INCIDENT_TABLETOP.md) — access and credential incident decisions, results, gaps, and operational-drill boundaries.
+20. [Live security-header record](LIVE_SECURITY_HEADER_RECORD.md) — sanitized read-only evidence from the private deployment and its limitations.
+21. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
+22. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
+23. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
 
 ## Publication boundary
 
