@@ -15,6 +15,7 @@ The record covers the photo inbox, OCR comparison dialog, event review queues, q
 | Static accessibility lint | Passed with zero errors | JSX accessibility rules run across the application; image-component performance advisories are not accessibility failures |
 | Keyboard dialog structure | Passed | Source guards cover dialog roles, accessible labels, focus containment, Escape handling, and return focus |
 | Bypass navigation | Passed | A keyboard-visible skip link moves focus directly to the main application surface |
+| Primary view state | Passed | Photo inbox, week, and add-event controls expose their selected state to assistive technology |
 | Calendar control context | Passed | Event controls include full date context; view controls expose pressed state |
 | Mobile chooser containment | Passed | Source guards cover safe-area positioning, bounded height, independent scrolling, contained keyboard navigation, and touch-sized rows and checkboxes |
 | Timeline readability | Passed | Timeline and all-day labels use the accessible muted text color |
