@@ -30,6 +30,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Accessibility conformance | Not yet claimed | Automated and source-level evidence passed; a low-contrast timeline label was remediated to a 5.15:1 contrast ratio. Manual assistive-technology and responsive-state testing remains |
 | Response and recovery readiness | Synthetic decision exercise completed; operations not exercised | The sanitized runbook and tabletop cover severity, minimal evidence, containment, credential rotation, notification escalation, and recovery gates; actual alerting, access containment, rotation, and rollback remain pending |
 | Privacy-impact assessment | Completed for engineering scope | The synthetic assessment inventories processing, retention intent, individual controls, external recipients, risks, and broader-access conditions; independent privacy and legal review remain pending |
+| Retention and disposal schedule | Drafted, not approved | Current behavior, proposed time-based targets, user disposal boundaries, and verification steps are documented; approval, implementation, and operating evidence remain pending |
 | Shared-device disposal control | Implemented and automatically scoped | A two-step control targets only enumerated application storage; supported-device manual verification remains pending |
 | Live calendar end-to-end test | Pending human session | Requires an authorized isolated test-calendar session and explicit review of the disposable event |
 

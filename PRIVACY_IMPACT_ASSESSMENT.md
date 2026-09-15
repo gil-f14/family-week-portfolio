@@ -49,6 +49,8 @@ The product currently explains that photos and pasted text are processed in the 
 
 ## Access, retention, and deletion rules
 
+Current behavior and proposed time-based targets are separated in the [data retention and disposal schedule](DATA_RETENTION_SCHEDULE.md). Proposed targets are not treated as implemented controls until the owner approves them and tests pass.
+
 - Hosting remains owner-only during the private pilot unless an explicit access review approves a change.
 - Device-local data has no silent cross-device synchronization.
 - **Clear this device** removes the local draft, dictionary, photo preview, display selections, view preferences, and color rules. It does not delete Google Calendar events or disconnect Google.
