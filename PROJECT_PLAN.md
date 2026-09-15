@@ -17,7 +17,7 @@
 | Sep 3, 2026 | Shared-device privacy control | Consolidated two-step disposal of app-specific drafts, learned terms, photo preview, and display preferences | Exact-key scope test, updated privacy assessment, and private deployment |
 | Sep 3, 2026 | Incident decision exercise | Synthetic access-expansion and credential-exposure tabletop | Sanitized decision record, recovery gates, and corrective-action backlog |
 | Sep 2026 | Privacy and retention governance | Current-versus-target retention schedule, seven-day inactive local-draft expiry, and concise privacy notice draft | Automated boundary tests, documented user controls, approval gaps, and supported-device verification plan |
-| Sep 15, 2026 | Production-readiness evidence refresh | Reduced-motion handling and exact-build dependency-identifier screening | 97-test release gate, updated accessibility record, and claim-bounded supply-chain evidence |
+| Sep 15, 2026 | Production-readiness evidence refresh | Reduced-motion handling, exact-build dependency-identifier screening, and prioritized threat-model coverage | 98-test release gate, updated accessibility record, and claim-bounded security evidence |
 
 Internal hosting revision numbers and deployment identifiers are intentionally excluded from the public portfolio.
 
@@ -29,7 +29,7 @@ Complete for private pilot use. The core photo-to-reviewed-calendar workflow, du
 
 ### V2
 
-Feature-complete at the core level. The automated release gate currently passes 97 tests, including reduced-motion and build-artifact screening. Manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
+Feature-complete at the core level. The automated release gate currently passes 98 tests, including reduced-motion, build-artifact screening, and threat-model coverage. Manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
 
 ### V3
 

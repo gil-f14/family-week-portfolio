@@ -44,7 +44,7 @@ The project follows NIST-aligned risk-management practices, but it has not under
 
 ## Evidence of quality
 
-- 97 automated tests covering calendar rules, duplicate behavior, retry handling, OCR correction, draft recovery, validation, privacy controls, accessibility source guards, build-artifact screening, and rendered safety messages.
+- 98 automated tests covering calendar rules, duplicate behavior, retry handling, OCR correction, draft recovery, validation, privacy controls, accessibility source guards, build-artifact screening, threat-model coverage, and rendered safety messages.
 - Production build verification before private deployment.
 - End-to-end validation against a disposable Google Calendar event.
 - Owner-only deployment with explicit account access.

@@ -45,6 +45,25 @@ Private application service: authorization, validation, duplicate checks
 
 The browser, application service, identity provider, calendar provider, forecast providers, software supply chain, and public documentation repository are separate trust boundaries. A control in one boundary is not assumed to protect another.
 
+## Risk-rating method
+
+Residual priority is a qualitative engineering judgment after considering the controls documented here. Likelihood uses **unlikely**, **possible**, or **likely**; impact uses **moderate**, **major**, or **severe**. A high priority means release or distribution evidence is still required, not that an incident is known to have occurred. This is not an organizational risk acceptance or a formal quantitative assessment.
+
+## Prioritized risk register
+
+| ID | Risk scenario and boundary | Likelihood | Impact | Residual priority | Current treatment | Required closeout evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| TM-01 | A forged, malformed, or confused-deputy request mutates an unauthorized calendar | Unlikely | Severe | High | State, PKCE, same-origin mutation checks, bounded identifiers, and app-calendar-only writes/deletes | Manual OAuth scope review plus approved synthetic wrong-target and revocation tests |
+| TM-02 | Incorrect OCR or ambiguous time becomes a wrong event | Possible | Major | Medium | Confidence gating, explicit review, complete-batch validation, and duplicate checks | Representative synthetic OCR evaluation and approved end-to-end review test |
+| TM-03 | An unlocked shared device exposes local drafts or learned vocabulary | Possible | Major | High | Seven-day draft expiry and two-step app-scoped device clearing | Supported-device verification and household operating guidance |
+| TM-04 | A session credential is stolen, replayed, or retained beyond need | Unlikely | Severe | High | Authenticated encryption, secure HTTP-only cookie, expiry validation, and disconnect path | Manual expiry, disconnect, provider-revocation, and recovery evidence |
+| TM-05 | A compromised or mislicensed dependency affects the browser or distributed artifact | Possible | Severe | High | Locked dependencies, integrity-pinned OCR assets, SBOM, inventory, build scan, and closed distribution gate | Independent security review plus qualified resolution of all license-review rows |
+| TM-06 | Public portfolio history reveals personal, credential, or operational information | Unlikely | Severe | Medium | Documentation-only allowlist, synthetic examples, new history, and automated secret/PII checks | Human pre-publication review after every new artifact or media type |
+| TM-07 | Adversarial input or excessive reads exhaust browser or provider resources | Possible | Moderate | Medium | Image bounds, confidence limits, readable-calendar cap, and fail-closed errors | Measured performance budgets and provider-side throttling review |
+| TM-08 | A keyboard, screen-reader, zoom, motion, or touch user cannot safely review an action | Possible | Major | High | Dialog semantics, focus controls, responsive containment, contrast checks, reduced-motion handling, and explicit review states | Complete the documented manual accessibility and supported-device matrix |
+
+No high-priority row is accepted or closed by this document. The private pilot remains gated by its stated manual checks, and application-source or binary distribution remains blocked separately by the license review.
+
 ## Threat actors and assumptions
 
 - An unauthenticated internet user attempting to reach the private application.
@@ -88,12 +107,12 @@ The model assumes the hosting and identity providers enforce their documented pl
 
 ## Highest residual risks
 
-1. A lost or shared unlocked device can expose device-local drafts and dictionary entries until the user runs the available clear-device control.
-2. Manual accessibility and supported-device testing has not been completed.
-3. Live create, duplicate, retry, revision-conflict, and delete behavior still requires an approved synthetic end-to-end test.
-4. Privacy-safe operational monitoring and audit retention are not fully defined.
-5. An independent penetration test and requirement-by-requirement OWASP ASVS review have not been performed.
-6. Application-source distribution requires an SBOM, verified license metadata, and third-party notices.
+1. **TM-01 and TM-04:** OAuth scope, revocation, recovery, and wrong-target behavior still need approved manual evidence.
+2. **TM-03:** a lost or shared unlocked device can expose device-local drafts and dictionary entries until the user runs the available clear-device control.
+3. **TM-08:** manual accessibility and supported-device testing has not been completed.
+4. **TM-02:** live create, duplicate, retry, revision-conflict, and delete behavior still requires an approved synthetic end-to-end test.
+5. **TM-05:** an independent penetration test, requirement-by-requirement OWASP ASVS review, and qualified distribution-license review have not been performed.
+6. Privacy-safe operational monitoring and audit retention are not fully defined.
 
 ## Verification plan
 

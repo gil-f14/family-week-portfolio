@@ -15,6 +15,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Repository visibility | Passed | The repository began private and became public only after the documented gate and explicit owner approval |
 | Complete-history secret scan | Passed | Checksum-verified Gitleaks 8.30.1 reported zero findings in the portfolio history |
 | Private application history secret scan | Passed | The same verified scanner reported zero findings; this does not authorize publishing that repository |
+| Threat-model coverage | Baseline prioritized; independent review pending | Eight synthetic risk scenarios identify trust boundaries, residual priority, current treatment, and required closeout evidence; no high-priority risk is represented as accepted or closed |
 | PII and contextual identifier scan | Passed | Zero matches for known names, accounts, emails, phone-like values, locations, private domains, cloud identifiers, key headers, and credential assignments |
 | Binary and media inventory | Passed | No binary or media files are present in the portfolio release |
 | Git author privacy | Passed | Repository history uses a GitHub no-reply identity rather than a personal mailbox |
@@ -22,7 +23,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Dependency exposure in portfolio | Not applicable | The documentation-only repository has no package manifest, executable dependency, or deployment workflow |
 | Private application dependency advisory scan | Passed | Production dependency audit reported zero critical, high, moderate, low, or informational advisories at review time |
 | Private application license inventory | Candidate notice assembled; distribution blocked | A machine-readable SBOM, third-party inventory, artifact trace, candidate notice bundle, and 11-row review worksheet are retained privately. Automated evidence confirms one flagged component in emitted browser JavaScript; the current exact-build identifier scan found no development/build identifiers, but exact packaged-archive confirmation, notice validation, and every qualified legal disposition remain open before distributing application source or binaries |
-| Automated release preflight | Passed | Lint, production build, all 97 automated tests, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
+| Automated release preflight | Passed | Lint, production build, all 98 automated tests, OCR integrity, security-inventory freshness, portfolio privacy patterns, local links, and unexpected-file controls passed |
 | Live response-header verification | Passed for sampled paths | Read-only checks of the private root page and non-mutating authentication-status API matched the documented policy; independent TLS evaluation remains pending |
 | GitHub dependency alerts | Enabled | Vulnerability alerts and automatic security updates are active |
 | GitHub built-in secret scanning | Enabled | Secret scanning and push protection were enabled immediately at public release |

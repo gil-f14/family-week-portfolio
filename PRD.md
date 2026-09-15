@@ -95,7 +95,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 
 ### Remaining V2 acceptance work
 
-The current automated release gate passes 97 tests, including reduced-motion behavior, accessibility source guards, calendar safety boundaries, privacy controls, and build-artifact screening. This evidence does not replace the human checks below.
+The current automated release gate passes 98 tests, including reduced-motion behavior, accessibility source guards, calendar safety boundaries, privacy controls, build-artifact screening, and threat-model coverage. This evidence does not replace the human checks below.
 
 - Manual keyboard-only walkthrough on every core flow.
 - VoiceOver testing on a supported iPhone/iPad and screen-reader testing on desktop.
