@@ -35,6 +35,9 @@ This checklist supplements the detailed accessibility and synthetic end-to-end p
 | H-10 | Test at 200% zoom and a narrow phone-sized viewport | No required control is clipped; pop-outs fit the viewport and scroll independently | ☐ Pass ☐ Fail |
 | H-11 | Rotate a supported tablet or resize between portrait and landscape | Agenda/week behavior remains understandable and no selection or draft is lost unexpectedly | ☐ Pass ☐ Fail |
 | H-12 | Use one available screen reader for the core flow | Dialog names, buttons, full event dates, status updates, and errors are announced meaningfully | ☐ Pass ☐ Fail |
+| H-13 | Open an approved synthetic read-only overlay event and inspect available actions | No add, edit, or delete action can target the overlay; the dedicated Family Week calendar remains the only write target | ☐ Pass ☐ Fail ☐ Not Run |
+| H-14 | After all synthetic events are removed, revoke authorization for only the isolated test identity and refresh | Calendar access fails closed, no mutation occurs, and the app gives a clear reconnect path | ☐ Pass ☐ Fail |
+| H-15 | Reconnect the same isolated test identity, create the synthetic event once, then delete it through both confirmations | The existing dedicated calendar is reused, no duplicate calendar appears, and zero synthetic events remain | ☐ Pass ☐ Fail |
 
 ## Immediate stop conditions
 
@@ -63,7 +66,7 @@ Do not attach real screenshots, calendar exports, photos, tokens, browser profil
 
 ## Acceptance decision
 
-- [ ] All H-01 through H-12 checks passed, or every Not Run item is explicitly excluded from the supported release scope.
+- [ ] All H-01 through H-15 checks passed, or every Not Run item is explicitly excluded from the supported release scope.
 - [ ] Every synthetic event was removed and cleanup was independently confirmed.
 - [ ] No critical or high-severity defect remains open.
 - [ ] The release decision remains limited to a private pilot unless a separate access and risk review is approved.

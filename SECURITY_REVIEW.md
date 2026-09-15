@@ -34,7 +34,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Privacy notice | Engineering draft completed | Concise user-facing language covers local processing, recipients, retention, user controls, shared-device limits, and privacy-safe support; independent privacy and legal approval remain pending |
 | Retention and disposal schedule | Drafted, not approved | Seven-day inactive local-draft expiry is implemented and automatically tested; target approval, supported-device evidence, and remaining operating evidence are pending |
 | Shared-device disposal control | Implemented and automatically scoped | A two-step control targets only enumerated application storage; supported-device manual verification remains pending |
-| Live calendar end-to-end test | Pending human session | Requires an authorized isolated test-calendar session and explicit review of the disposable event |
+| Live calendar end-to-end test | Pending human session | The synthetic plan now covers creation, duplicate and retry safety, wrong-target resistance, revision conflict, cleanup, revoked-session failure, and reauthorization recovery; execution requires the user in an isolated test-calendar session |
 
 ## License decision
 

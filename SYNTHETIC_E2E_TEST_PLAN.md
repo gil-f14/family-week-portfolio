@@ -1,7 +1,7 @@
 # Family Week — Synthetic Calendar End-to-End Test Plan
 
 **Status:** Approved test design; live execution requires the user in an isolated test-calendar session  
-**Purpose:** Verify calendar creation, duplicate prevention, uncertain retry, read-only boundaries, revision conflicts, and two-stage deletion without using household data.
+**Purpose:** Verify calendar creation, duplicate prevention, uncertain retry, read-only and wrong-target boundaries, revision conflicts, two-stage deletion, authorization failure, and recovery without using household data.
 
 ## Safety rules
 
@@ -12,6 +12,7 @@
 5. Stop immediately if the app shows an unexpected identity, write target, calendar set, or real event in the review result.
 6. Do not capture credentials, browser storage, authentication URLs, tokens, or unrelated calendar content as evidence.
 7. Remove every synthetic event at the end and record the cleanup result.
+8. Run authorization revocation and recovery only after confirming that all synthetic events have been removed; never revoke or test with a personal or production identity.
 
 ## Preconditions
 
@@ -89,6 +90,32 @@ Use a date at least two days in the future. Do not reuse an existing personal or
 
 **Pass:** Both confirmations are required, only app-owned synthetic events are removed, and cleanup leaves zero test records.
 
+### E2E-08 — Wrong-target resistance
+
+1. Confirm the quick-add and reviewed-event screens name only the dedicated **Family Week** write target.
+2. Select an approved synthetic read-only overlay and open one of its synthetic events.
+3. Confirm no add, edit, or delete path can target that overlay. Do not alter requests with developer tools.
+
+**Pass:** The interface offers no arbitrary write target, the overlay remains display-only, and no provider calendar changes. If no approved synthetic overlay exists, mark this case **Not executed** and retain the automated server-boundary result as separate engineering evidence.
+
+### E2E-09 — Revoked-session failure
+
+1. Reconfirm that E2E-07 left zero synthetic records.
+2. From the isolated test identity's provider security settings, revoke the Family Week authorization.
+3. Return to Family Week, refresh, and attempt a read-only calendar refresh without submitting an event.
+4. Confirm the app reports that reconnection is required and does not reveal calendar content or enter a retry loop.
+
+**Pass:** Calendar access fails closed, no mutation occurs, the review or local draft remains on the device, and the user receives a clear reconnect path.
+
+### E2E-10 — Reauthorization recovery
+
+1. Reconnect only the same isolated non-production test identity.
+2. Confirm the existing dedicated **Family Week** calendar is reused rather than creating another calendar.
+3. Create Record A once, verify it appears exactly once, then remove it through both confirmation stages.
+4. Refresh the app and provider calendar and reconfirm zero synthetic records.
+
+**Pass:** Recovery restores the intended least-privilege workflow, creates no duplicate calendar, and leaves no synthetic event behind.
+
 ## Evidence record
 
 Record text-only results. Do not attach calendar screenshots or exports unless they are cropped, synthetic-only, metadata-reviewed, and separately approved for storage.
@@ -102,12 +129,16 @@ Record text-only results. Do not attach calendar screenshots or exports unless t
 | E2E-05 | Pending | — | — | — |
 | E2E-06 | Pending | — | — | — |
 | E2E-07 | Pending | — | — | — |
+| E2E-08 | Pending | — | — | — |
+| E2E-09 | Pending | — | — | — |
+| E2E-10 | Pending | — | — | — |
 
 ## Exit criteria
 
-- E2E-01, E2E-02, E2E-03, E2E-06, and E2E-07 pass.
+- E2E-01, E2E-02, E2E-03, E2E-06, E2E-07, E2E-09, and E2E-10 pass.
 - Optional environment-dependent cases are either passed or explicitly recorded as Not executed with a follow-up owner.
 - No event is written outside the dedicated calendar.
+- Revoked authorization fails closed, and reauthorization reuses the existing dedicated calendar.
 - Zero synthetic records remain after cleanup.
 - Any failure affecting authorization, data exposure, duplicate safety, or deletion is resolved and retested before broader household use.
 
