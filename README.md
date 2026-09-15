@@ -12,18 +12,19 @@ This directory is the public-safe narrative for Family Week. It describes the pr
 6. [NIST current and target engineering profile](NIST_CURRENT_TARGET_PROFILE.md) — prioritized cybersecurity and privacy outcomes, roles, evidence, and gaps.
 7. [Privacy impact assessment](PRIVACY_IMPACT_ASSESSMENT.md) — data lifecycle, minimization, risks, controls, and approval conditions.
 8. [Data retention and disposal schedule](DATA_RETENTION_SCHEDULE.md) — current behavior, proposed targets, disposal controls, and approval gaps.
-9. [Privacy-safe monitoring plan](PRIVACY_SAFE_MONITORING_PLAN.md) — content-free events, prohibited fields, thresholds, retention targets, and verification gates.
-10. [OWASP ASVS readiness matrix](OWASP_ASVS_READINESS.md) — Level 2 target, present evidence, priority gaps, and verification exit criteria.
-11. [Accessibility test record](ACCESSIBILITY_TEST_RECORD.md) — completed automated evidence, contrast results, and the required human test matrix.
-12. [Private-pilot acceptance checklist](MORNING_ACCEPTANCE_CHECKLIST.md) — concise human calendar, responsive, accessibility, cleanup, and stop-condition checks.
-13. [Synthetic end-to-end test plan](SYNTHETIC_E2E_TEST_PLAN.md) — safe live-calendar verification and cleanup procedure.
-14. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
-15. [Security operations runbook](SECURITY_OPERATIONS_RUNBOOK.md) — severity targets, minimal-evidence rules, incident playbooks, and recovery gates.
-16. [Synthetic incident tabletop](SYNTHETIC_INCIDENT_TABLETOP.md) — access and credential incident decisions, results, gaps, and operational-drill boundaries.
-17. [Live security-header record](LIVE_SECURITY_HEADER_RECORD.md) — sanitized read-only evidence from the private deployment and its limitations.
-18. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
-19. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
-20. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
+9. [Privacy notice draft](PRIVACY_NOTICE_DRAFT.md) — concise user-facing processing, retention, choice, shared-device, and support language pending independent review.
+10. [Privacy-safe monitoring plan](PRIVACY_SAFE_MONITORING_PLAN.md) — content-free events, prohibited fields, thresholds, retention targets, and verification gates.
+11. [OWASP ASVS readiness matrix](OWASP_ASVS_READINESS.md) — Level 2 target, present evidence, priority gaps, and verification exit criteria.
+12. [Accessibility test record](ACCESSIBILITY_TEST_RECORD.md) — completed automated evidence, contrast results, and the required human test matrix.
+13. [Private-pilot acceptance checklist](MORNING_ACCEPTANCE_CHECKLIST.md) — concise human calendar, responsive, accessibility, cleanup, and stop-condition checks.
+14. [Synthetic end-to-end test plan](SYNTHETIC_E2E_TEST_PLAN.md) — safe live-calendar verification and cleanup procedure.
+15. [Security threat model](THREAT_MODEL.md) — assets, trust boundaries, STRIDE analysis, misuse cases, and residual risks.
+16. [Security operations runbook](SECURITY_OPERATIONS_RUNBOOK.md) — severity targets, minimal-evidence rules, incident playbooks, and recovery gates.
+17. [Synthetic incident tabletop](SYNTHETIC_INCIDENT_TABLETOP.md) — access and credential incident decisions, results, gaps, and operational-drill boundaries.
+18. [Live security-header record](LIVE_SECURITY_HEADER_RECORD.md) — sanitized read-only evidence from the private deployment and its limitations.
+19. [Security review](SECURITY_REVIEW.md) — completed portfolio checks, compensating controls, and residual risk.
+20. [Security policy](SECURITY.md) — private vulnerability-reporting expectations.
+21. [Public release gate](PUBLIC_RELEASE_GATE.md) — mandatory checklist before any GitHub repository becomes public.
 
 ## Publication boundary
 

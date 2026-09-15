@@ -16,7 +16,7 @@
 | Sep 2–3, 2026 | Assurance package | Public documentation release, threat model, private SBOM and software inventory, accessibility record, synthetic end-to-end test plan, NIST engineering profile, privacy-impact assessment, and OWASP ASVS Level 2 readiness matrix | Sanitized evidence, prioritized gaps, clean history scans, and automated regression coverage |
 | Sep 3, 2026 | Shared-device privacy control | Consolidated two-step disposal of app-specific drafts, learned terms, photo preview, and display preferences | Exact-key scope test, updated privacy assessment, and private deployment |
 | Sep 3, 2026 | Incident decision exercise | Synthetic access-expansion and credential-exposure tabletop | Sanitized decision record, recovery gates, and corrective-action backlog |
-| Sep 2026 | Retention governance | Current-versus-target retention and disposal schedule plus seven-day inactive local-draft expiry | Automated boundary tests, documented user controls, approval gaps, and supported-device verification plan |
+| Sep 2026 | Privacy and retention governance | Current-versus-target retention schedule, seven-day inactive local-draft expiry, and concise privacy notice draft | Automated boundary tests, documented user controls, approval gaps, and supported-device verification plan |
 
 Internal hosting revision numbers and deployment identifiers are intentionally excluded from the public portfolio.
 

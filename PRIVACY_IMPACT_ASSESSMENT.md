@@ -14,7 +14,7 @@ This document is an engineering control record, not a legal determination or cla
 | Data category | Purpose | Processing location and recipient | Retention and disposal | User control |
 | --- | --- | --- | --- | --- |
 | Schedule photo | Extract proposed events | Browser memory only; self-hosted OCR assets run on the device | Not uploaded by the application; preview ends when replaced, cleared, or the page closes | Replace the photo or use **Clear this device** |
-| OCR text and event draft | Human review before calendar creation | Device-local browser storage | Bounded draft persists until approval, draft clearing, or device clearing | Edit, clear draft, or clear device |
+| OCR text and event draft | Human review before calendar creation | Device-local browser storage | Bounded draft expires after 7 inactive days, approval, draft clearing, or device clearing | Edit, clear draft, or clear device |
 | Learned corrections | Improve recurring household OCR terms | Device-local browser storage | Persists until individual removal or device clearing; optional user-created backup | Review before learning, remove, export, import, or clear device |
 | Display preferences | Remember view, selected readable calendars, and color rules | Device-local browser storage | Persists until changed or device clearing | Change preferences or clear device |
 | Google authorization | Read permitted calendars and write only to the dedicated application calendar | Sealed, secure, HTTP-only session cookie; Google receives normal Calendar API requests | Session-limited; invalid or expired state is rejected | Disconnect Google or revoke provider access |
@@ -45,7 +45,7 @@ This document is an engineering control record, not a legal determination or cla
 
 ## Notice and choice
 
-The product currently explains that photos and pasted text are processed in the browser, requires review before a write, labels read-only calendars, explains the weather disclosure at the point of use, and distinguishes device clearing from calendar deletion and Google disconnection. Before broader access, an independently reviewed concise privacy notice must explain processing purposes, storage, recipients, retention, user choices, support, and the limits of shared-device protection.
+The product currently explains that photos and pasted text are processed in the browser, requires review before a write, labels read-only calendars, explains the weather disclosure at the point of use, and distinguishes device clearing from calendar deletion and Google disconnection. A concise [privacy notice draft](PRIVACY_NOTICE_DRAFT.md) now covers processing purposes, storage, recipients, retention, user choices, support, and the limits of shared-device protection; independent review and approval remain required before broader access.
 
 ## Access, retention, and deletion rules
 
