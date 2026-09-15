@@ -29,7 +29,7 @@ Complete for private pilot use. The core photo-to-reviewed-calendar workflow, du
 
 ### V2
 
-Feature-complete at the core level. The automated release gate currently passes 99 tests, including reduced-motion, build-artifact screening, threat-model coverage, and a reusable rendered-page accessibility audit harness. The unauthenticated root state returned zero axe-core 4.13.0 violations for the selected WCAG A/AA rule tags. Authenticated-state, manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
+Feature-complete at the core level. The automated release gate currently passes 100 tests, including reduced-motion, build-artifact screening, threat-model coverage, a reusable rendered-page accessibility audit harness, and freshness validation for a deterministic supply-chain evidence record. The unauthenticated root state returned zero axe-core 4.13.0 violations for the selected WCAG A/AA rule tags. Qualified provenance and license review, authenticated-state, manual supported-device, accessibility, and end-to-end release verification remain before describing it as broadly production-ready.
 
 ### V3
 
