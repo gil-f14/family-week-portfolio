@@ -88,6 +88,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 
 - Target WCAG 2.2 Level AA across supported responsive layouts.
 - Provide semantic names, roles, states, status messages, and full date context.
+- Provide keyboard bypass navigation to the main application surface.
 - Trap focus in modal surfaces, support Escape, and return focus to the trigger.
 - Preserve visible focus, keyboard operation, zoom/reflow, and touch target usability.
 - Honor reduced-motion preferences for decorative movement.
