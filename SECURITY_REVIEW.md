@@ -15,7 +15,7 @@ The release is a documentation-only Markdown collection with no application sour
 | Repository visibility | Passed | The repository began private and became public only after the documented gate and explicit owner approval |
 | Complete-history secret scan | Passed | Checksum-verified Gitleaks 8.30.1 reported zero findings in the portfolio history |
 | Private application history secret scan | Passed | The same verified scanner reported zero findings; this does not authorize publishing that repository |
-| Threat-model coverage | Baseline prioritized; independent review pending | Eight synthetic risk scenarios identify trust boundaries, residual priority, current treatment, and required closeout evidence; no high-priority risk is represented as accepted or closed |
+| Threat-model coverage | Baseline prioritized; independent review pending | Nine synthetic risk scenarios identify trust boundaries, residual priority, current treatment, and required closeout evidence; no high-priority risk is represented as accepted or closed |
 | PII and contextual identifier scan | Passed | Zero matches for known names, accounts, emails, phone-like values, locations, private domains, cloud identifiers, key headers, and credential assignments |
 | Binary and media inventory | Passed | No binary or media files are present in the portfolio release |
 | Git author privacy | Passed | Repository history uses a GitHub no-reply identity rather than a personal mailbox |

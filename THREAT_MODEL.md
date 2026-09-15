@@ -13,6 +13,7 @@
 4. Limit a compromised component to the smallest practical data and permission boundary.
 5. Make interrupted or repeated operations safe to retry.
 6. Preserve a reviewable audit trail without logging sensitive event content.
+7. Prevent generated artifacts and public documentation from exposing private operational identifiers.
 
 ## Assets and sensitivity
 
@@ -24,6 +25,7 @@
 | Reviewed event proposal | High | Validation, integrity, explicit approval before mutation |
 | Family Dictionary and local draft | Moderate to high | Device-local storage, strict size limits, clear-device recovery guidance |
 | Application source and deployment configuration | High | Private repository, restricted deployment access, secret scanning |
+| Generated build output and private hosting manifest | High | Post-build privacy checks, explicit private-only classification, exclusion from public and distribution packages |
 | Sanitized portfolio documents | Public | Release-gate review and exclusion of operational identifiers |
 
 ## Trust boundaries and data flows
@@ -61,6 +63,7 @@ Residual priority is a qualitative engineering judgment after considering the co
 | TM-06 | Public portfolio history reveals personal, credential, or operational information | Unlikely | Severe | Medium | Documentation-only allowlist, synthetic examples, new history, and automated secret/PII checks | Human pre-publication review after every new artifact or media type |
 | TM-07 | Adversarial input or excessive reads exhaust browser or provider resources | Possible | Moderate | Medium | Image bounds, confidence limits, readable-calendar cap, and fail-closed errors | Measured performance budgets and provider-side throttling review |
 | TM-08 | A keyboard, screen-reader, zoom, motion, or touch user cannot safely review an action | Possible | Major | High | Dialog semantics, focus controls, responsive containment, contrast checks, reduced-motion handling, and explicit review states | Complete the documented manual accessibility and supported-device matrix |
+| TM-09 | Generated build output or a packaged archive reveals a private URL, hosting identifier, local path, source map, or credential-like value | Unlikely | Severe | Medium | Post-build privacy and file-type gate, explicit private-only hosting manifest, relative social metadata, and exclusion of build output from the public portfolio | Human inspection of the exact packaged archive confirming that private-only metadata is excluded before any application distribution |
 
 No high-priority row is accepted or closed by this document. The private pilot remains gated by its stated manual checks, and application-source or binary distribution remains blocked separately by the license review.
 
@@ -88,6 +91,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 | Information disclosure | Photograph or OCR text remains on a shared device | Browser-based OCR, no photo upload, bounded local draft, and a two-step app-scoped device reset | Verify the reset on supported devices and educate shared-device users to run it |
 | Information disclosure | OAuth credential or calendar content reaches logs or public source | Sealed credential, private source, no-sensitive-logging rule, history scans, public release gate | Add automated log-field tests and an incident response exercise |
 | Information disclosure | Public portfolio reveals operational details | Documentation-only allowlist, synthetic content, PII and secret scans, separate Git history | Re-run the release gate before every new media or source addition |
+| Information disclosure | Generated build or archive exposes operational metadata | Post-build content and file-type checks; expected hosting metadata is classified private-only | Inspect the exact packaged archive and confirm private-only metadata is excluded before distribution |
 | Denial of service | Oversized or adversarial image exhausts browser resources | File-size, edge-length, pixel-count, and OCR confidence limits | Add measured performance budgets and service-side request throttling where supported |
 | Denial of service | Excessive calendar overlay or duplicate reads | Unique readable-calendar selection and strict selection cap | Add privacy-safe latency and failure-rate monitoring |
 | Elevation of privilege | Read access becomes broad write access | Read scopes for duplicate checks; writes and deletes restricted to the dedicated app calendar | Perform a formal OAuth scope review and provider-console evidence capture |
@@ -104,6 +108,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 | A forecast service returns an unexpected host | Reject the response rather than following the URL |
 | Local storage is malformed or oversized | Normalize, bound, or discard it without sending it elsewhere |
 | A public-document scan detects sensitive data | Stop publication, contain access, rotate credentials if needed, and clean history before republishing |
+| A generated-artifact scan detects a private identifier or unsafe file | Stop release, remove or isolate the value, rebuild, and rerun the full gate; never waive the private-only hosting manifest into a distribution package |
 
 ## Highest residual risks
 
@@ -112,11 +117,13 @@ The model assumes the hosting and identity providers enforce their documented pl
 3. **TM-08:** manual accessibility and supported-device testing has not been completed.
 4. **TM-02:** live create, duplicate, retry, revision-conflict, and delete behavior still requires an approved synthetic end-to-end test.
 5. **TM-05:** an independent penetration test, requirement-by-requirement OWASP ASVS review, and qualified distribution-license review have not been performed.
-6. Privacy-safe operational monitoring and audit retention are not fully defined.
+6. **TM-09:** the exact application-distribution archive has not been independently inspected; the expected private hosting manifest remains non-distributable.
+7. Privacy-safe operational monitoring and audit retention are not fully defined.
 
 ## Verification plan
 
 - Run the production build, lint, automated tests, dependency audit, and complete-history secret scan before a release.
+- Run the generated-artifact privacy and file-type gate, then manually inspect the exact packaged archive before any application distribution.
 - Test OAuth expiry, disconnect, revocation, and callback failure without exposing tokens.
 - Use a disposable synthetic event to test create, duplicate detection, interrupted retry, update conflict, and two-stage delete.
 - Test keyboard-only operation, screen readers, zoom/reflow, orientation, contrast, reduced motion, and touch targets on supported devices.
