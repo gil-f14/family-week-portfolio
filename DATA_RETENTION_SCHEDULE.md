@@ -20,7 +20,7 @@ This schedule documents current behavior separately from proposed targets. It is
 | Data category | Current behavior | Proposed private-pilot target | Disposal method | Approval or implementation gap |
 | --- | --- | --- | --- | --- |
 | Uploaded schedule photo and preview | Held in browser memory; not uploaded by the application | Keep only for the active page session or until replaced or cleared | Replace the photo, use **Clear this device**, or close the page | Verify disposal behavior on supported devices |
-| OCR text and event-review draft | Bounded device-local storage persists until approval, draft clearing, or device clearing | Automatically expire an inactive draft after 7 days while preserving immediate manual clearing | **Clear draft** or **Clear this device**; future automatic expiry | Seven-day expiry is proposed, not implemented |
+| OCR text and event-review draft | Bounded device-local storage expires after 7 days of inactivity, or sooner after approval or manual clearing | Keep the implemented 7-day maximum while preserving immediate manual clearing | Automatic expiry, **Clear draft**, or **Clear this device** | Verify expiry and disposal behavior on supported devices |
 | Learned Family Dictionary corrections | Device-local until individually removed or device clearing | Retain until the user removes or clears them; no silent cloud synchronization | Forget one entry or use **Clear this device** | Validate shared-device guidance and reset behavior |
 | Calendar selections, display mode, and color rules | Device-local until changed or device clearing | Retain until changed or cleared because these are user preferences | Change settings or use **Clear this device** | Verify reset on supported browsers |
 | Google authorization session | Sealed secure cookie expires after 30 days; can end earlier through disconnect, invalidation, or provider revocation | Keep the existing 30-day maximum during the private pilot and reassess before shared access | Disconnect in Family Week, wait for expiry, or revoke at the provider | Test disconnect and provider revocation; independently review session policy |
@@ -47,7 +47,7 @@ This schedule documents current behavior separately from proposed targets. It is
 Before approving this schedule:
 
 1. Test each local clearing control on every supported browser and device.
-2. Implement and test the proposed 7-day inactive-draft expiry or explicitly approve continued user-controlled retention.
+2. Verify the automated 7-day inactive-draft expiry on every supported browser and device.
 3. Test Google disconnect, session expiry, and provider revocation without retaining account or calendar content in evidence.
 4. Confirm hosting and provider-default logs do not capture prohibited fields; document unavoidable metadata, access, and deletion behavior.
 5. Test monitoring retention deletion with synthetic fixed-code events before enabling monitoring.
@@ -63,4 +63,4 @@ Before approving this schedule:
 
 ## NIST-aligned outcome mapping
 
-This draft supports the project's NIST Privacy Framework engineering profile through purpose limitation, data minimization, individual control, disposal, and governance. Approval, implementation of proposed controls, operating evidence, and independent review remain incomplete; no NIST compliance or certification is claimed.
+This draft supports the project's NIST Privacy Framework engineering profile through purpose limitation, data minimization, individual control, disposal, and governance. Approval of remaining targets, operating evidence, and independent review remain incomplete; no NIST compliance or certification is claimed.

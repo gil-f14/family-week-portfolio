@@ -37,7 +37,7 @@
 ### Privacy
 
 - Source photos and extracted text stay in the browser during the normal workflow.
-- Drafts and learned corrections are device-local.
+- Drafts and learned corrections are device-local; inactive review drafts expire automatically after seven days.
 - A two-step, app-scoped device reset clears the draft, learned corrections, photo preview, and display preferences without deleting calendar events, disconnecting Google, or clearing unrelated site data.
 - The application does not use a remote language model to learn household corrections.
 - Operational guidance excludes event details, photos, locations, and credentials from logs.

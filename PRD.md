@@ -82,6 +82,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 - Calendar chooser contained within the mobile viewport and dismissible outside.
 - Scrollable day range through midnight with a sticky all-day row.
 - Two-step **Clear this device** control removes local drafts, learned corrections, calendar-display choices, color rules, and the current photo preview without deleting Google Calendar events or ending the Google connection.
+- Inactive local review drafts expire automatically after seven days; manual clearing remains immediately available.
 
 ### Accessibility requirements
 
@@ -114,7 +115,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 | Data | Normal location | Retention intent |
 | --- | --- | --- |
 | Source photo | Browser memory | Not retained by the service |
-| Extracted text and draft | Device-local browser storage | User-controlled, bounded local state |
+| Extracted text and draft | Device-local browser storage | Bounded local state; automatic expiry after 7 inactive days |
 | Learned corrections | Device-local browser storage | User-controlled; no cloud model training |
 | Google authorization | Encrypted, secure session cookie | Session lifetime; invalid data is rejected |
 | Calendar event | Google Calendar | Governed by the user's calendar settings |
