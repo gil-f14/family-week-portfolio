@@ -18,6 +18,7 @@ The record covers the photo inbox, OCR comparison dialog, event review queues, q
 | Mobile chooser containment | Passed | Source guards cover safe-area positioning, bounded height, independent scrolling, contained keyboard navigation, and touch-sized rows and checkboxes |
 | Timeline readability | Passed | Timeline and all-day labels use the accessible muted text color |
 | Color contrast regression | Passed | Automated WCAG contrast calculations require at least 4.5:1 for normal-text palette pairs listed below |
+| Reduced-motion preference | Passed for current decorative movement | The upload hover transition and lift are disabled when the browser requests reduced motion |
 | Build and regression suite | Passed | Production build and all automated tests passed at the time of this record |
 
 ## Verified contrast pairs
@@ -47,7 +48,7 @@ Color is supplemented by visible names, event text, labels, button states, or re
 | Zoom and reflow | 200% and 400% zoom plus 320 CSS-pixel reflow without loss of information or two-dimensional scrolling except the calendar grid | Pending |
 | Orientation | Phone and supported tablet in portrait and landscape, including open chooser and event dialogs | Pending |
 | Touch targets | Key actions and dense calendar controls on supported touch devices | Pending |
-| Motion and visual preferences | Reduced-motion, increased contrast where supported, text spacing, and focus visibility | Pending |
+| Motion and visual preferences | Manually confirm reduced-motion behavior; test increased contrast where supported, text spacing, and focus visibility | Pending |
 | Error recovery | OCR uncertainty, validation errors, expired authentication, interrupted writes, duplicate detection, and denied deletion | Pending |
 
 ## Unsupported legacy boundary

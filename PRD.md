@@ -90,6 +90,7 @@ Family schedules arrive through whiteboards, paper handouts, school notices, tea
 - Provide semantic names, roles, states, status messages, and full date context.
 - Trap focus in modal surfaces, support Escape, and return focus to the trigger.
 - Preserve visible focus, keyboard operation, zoom/reflow, and touch target usability.
+- Honor reduced-motion preferences for decorative movement.
 - Never use color as the sole indicator of owner, warning, duplicate, or status.
 
 ### Remaining V2 acceptance work
