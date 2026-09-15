@@ -12,6 +12,7 @@ The record covers the photo inbox, OCR comparison dialog, event review queues, q
 
 | Area | Result | Evidence and boundary |
 | --- | --- | --- |
+| Runtime rules audit | Passed with zero violations | axe-core 4.13.0 evaluated the rendered unauthenticated root state against WCAG 2 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA rule tags; authenticated, modal, calendar-data, and responsive states remain outside this result |
 | Static accessibility lint | Passed with zero errors | JSX accessibility rules run across the application; image-component performance advisories are not accessibility failures |
 | Keyboard dialog structure | Passed | Source guards cover dialog roles, accessible labels, focus containment, Escape handling, and return focus |
 | Bypass navigation | Passed | A keyboard-visible skip link moves focus directly to the main application surface |
@@ -59,7 +60,7 @@ First-generation tablets limited to obsolete browser engines are not part of the
 
 ## Known limits of automation
 
-Static checks cannot prove reading order, accessible-name quality, actual screen-reader announcements, focus behavior in every runtime state, zoom usability, cognitive clarity, or touch performance. Automated success therefore cannot be converted into a WCAG, ADA, or Section 508 compliance claim.
+Static checks and the single-state runtime rules audit cannot prove reading order, accessible-name quality, actual screen-reader announcements, focus behavior in every runtime state, zoom usability, cognitive clarity, or touch performance. Automated success therefore cannot be converted into a WCAG, ADA, or Section 508 compliance claim.
 
 ## Exit criteria for a conformance assessment
 
