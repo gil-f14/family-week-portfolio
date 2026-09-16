@@ -16,6 +16,8 @@ A deterministic private manifest template now supplies forty synthetic case IDs,
 
 A pure private evaluator now accepts only a complete result set bound to the same benchmark, application reference, and OCR asset hashes. It rejects free-form subjects and locations, missing or duplicate case IDs, invalid counts, and mismatched evidence. It calculates aggregate character error, word, structured-field, day, time, all-day, duplicate, unsafe-pass, and correction-load measures and applies the engineering release thresholds below. This tests the scoring logic only; no benchmark results have been produced.
 
+A separate pure comparator validates two aggregate records with identical case counts and blocks change approval when the current run fails its thresholds, character error increases by more than two percentage points, or any accuracy measure below regresses by more than two points. It accepts no notes or other free-form fields. No aggregate record is designated as the approved baseline yet.
+
 ## Dataset matrix
 
 The first benchmark target is at least forty independently created images, balanced across these conditions:
