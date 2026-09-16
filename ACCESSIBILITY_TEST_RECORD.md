@@ -15,6 +15,7 @@ The record covers the photo inbox, OCR comparison dialog, event review queues, q
 | Runtime rules audit | Passed with zero violations | axe-core 4.13.0 evaluated the rendered unauthenticated root state against WCAG 2 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA rule tags; authenticated, modal, calendar-data, and responsive states remain outside this result |
 | Static accessibility lint | Passed with zero errors | JSX accessibility rules run across the application; image-component performance advisories are not accessibility failures |
 | Keyboard dialog structure | Passed | Source guards cover dialog roles, accessible labels, focus containment, Escape handling, and return focus |
+| Synthetic authenticated-state contract | Passed | Source guards cover the calendar chooser, event details, photo comparison, modal labeling, initial focus, keyboard containment, focus return, responsive chooser bounds, and polite view-state announcements; this is not a runtime screen-reader result |
 | Bypass navigation | Passed | A keyboard-visible skip link moves focus directly to the main application surface |
 | Primary view state | Passed | Photo inbox, week, and add-event controls expose their selected state to assistive technology |
 | Calendar control context | Passed | Event controls include full date context; view controls expose pressed state |
@@ -60,7 +61,7 @@ First-generation tablets limited to obsolete browser engines are not part of the
 
 ## Known limits of automation
 
-Static checks and the single-state runtime rules audit cannot prove reading order, accessible-name quality, actual screen-reader announcements, focus behavior in every runtime state, zoom usability, cognitive clarity, or touch performance. Automated success therefore cannot be converted into a WCAG, ADA, or Section 508 compliance claim.
+Static checks, including the synthetic authenticated-state source contract, and the single-state runtime rules audit cannot prove reading order, accessible-name quality, actual screen-reader announcements, focus behavior in every runtime state, zoom usability, cognitive clarity, or touch performance. Automated success therefore cannot be converted into a WCAG, ADA, or Section 508 compliance claim.
 
 ## Exit criteria for a conformance assessment
 
