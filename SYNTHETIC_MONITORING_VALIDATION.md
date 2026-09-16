@@ -1,6 +1,6 @@
 # Family Week — Synthetic Monitoring Validation Plan
 
-**Status:** Test cases prepared; instrumentation, retention jobs, and alert routing remain inactive  
+**Status:** Schema and local threshold cases automated; instrumentation, retention jobs, access enforcement, and alert routing remain inactive
 **Scope:** Content-free event validation, thresholds, retention, access, and fail-safe behavior  
 **Claim boundary:** This plan is not operating evidence and does not demonstrate monitoring coverage, alert delivery, service levels, incident response, or compliance.
 
@@ -66,3 +66,7 @@ For each executed case, retain only the case ID, implementation version, rounded
 5. An authorized non-delivering drill produces sanitized evidence before any external alert route is enabled.
 
 Until these criteria are met, monitoring remains a specification and test plan rather than an operating control.
+
+## Current evidence boundary
+
+Automated tests exercise MON-01 through MON-15 against a pure validator and threshold evaluator with no storage or network side effects. MON-16 through MON-22 require future retention, access-control, routing, and operational-drill implementations. None of these results demonstrates live monitoring or alert delivery.

@@ -1,6 +1,6 @@
 # Family Week — Privacy-Safe Monitoring Plan
 
-**Status:** Content-free monitoring specification; instrumentation and alert routing are not yet implemented  
+**Status:** Content-free validator and local threshold evaluator implemented; instrumentation, retention, and alert routing are not yet implemented
 **Scope:** Private-pilot availability, access posture, authentication boundaries, calendar-operation outcomes, release integrity, and incident signals  
 **Claim boundary:** This plan is not evidence that monitoring is operating, that alerts meet a service level, or that the product complies with a standard.
 
@@ -37,7 +37,7 @@ Free-form fields, request bodies, response bodies, URLs with query strings, cook
 | `access_policy_check` | `owner_only`, `unexpected_viewer`, `unexpected_group`, `public_mode` | Detect broadened site access | Critical on any result other than the approved owner-only posture |
 | `oauth_boundary` | `state_rejected`, `session_expired`, `provider_denied`, `callback_failed` | Detect authentication breakage or repeated abuse | High when failures exceed ten in fifteen minutes; investigate single state-validation regressions after a release |
 | `calendar_read` | `provider_unavailable`, `scope_denied`, `rate_limited`, `invalid_request` | Detect week-view and duplicate-check failures | High when more than five failures occur in fifteen minutes or success rate falls below ninety-five percent in an hour |
-| `calendar_mutation` | `validation_denied`, `origin_denied`, `wrong_target_denied`, `revision_conflict`, `provider_failed`, `success` | Detect unsafe or unreliable create/delete attempts | Critical for any confirmed wrong-target success; high for repeated provider failures; retain only counts and fixed codes |
+| `calendar_mutation` | `validation_denied`, `origin_denied`, `wrong_target_denied`, `wrong_target_success`, `revision_conflict`, `provider_failed`, `success` | Detect unsafe or unreliable create/delete attempts | Critical for any confirmed wrong-target success; high for repeated provider failures; retain only counts and fixed codes |
 | `release_gate` | `passed`, `failed_build`, `failed_test`, `inventory_stale`, `privacy_scan_failed` | Prevent unverified deployment | Block release on every failure; high if a failed gate is bypassed |
 | `dependency_signal` | `critical_advisory`, `high_advisory`, `integrity_mismatch`, `license_review_required` | Detect supply-chain changes | Follow the documented severity and distribution gates |
 
@@ -50,6 +50,10 @@ Thresholds are conservative private-pilot starting points. They must be tuned fr
 - Provider error messages are mapped to allowlisted reason codes before recording; raw messages are not logged.
 - Platform-generated logs must be reviewed for default IP, request-header, query-string, and user-agent collection. Disable or minimize those fields where the platform permits; otherwise restrict access and retention and document the residual risk.
 - Synthetic health checks use read-only endpoints and never open a live calendar, refresh a user session, or perform a calendar mutation.
+
+## Implemented validation boundary
+
+A pure local module now accepts only the seven approved fields, exact event and reason allowlists, rounded timestamps, fixed duration buckets, bounded release references, and non-negative integer counts. It produces fixed severity codes for the documented deployment, access, OAuth, calendar-read, wrong-target mutation, release-gate, and dependency-integrity thresholds. Unknown fields and free-form values fail closed without echoing the rejected content. The module has no storage, network, logging, calendar, alert-delivery, or recovery side effects.
 
 ## Retention and access target
 
@@ -72,7 +76,7 @@ Retention starts only after the owner approves the monitoring implementation and
 
 ## Verification before activation
 
-The prepared [synthetic monitoring validation plan](SYNTHETIC_MONITORING_VALIDATION.md) defines the required schema, threshold, retention, access, and fail-safe cases without enabling collection or external alert delivery.
+The prepared [synthetic monitoring validation plan](SYNTHETIC_MONITORING_VALIDATION.md) defines the required schema, threshold, retention, access, and fail-safe cases without enabling collection or external alert delivery. Schema and local threshold cases are automated; retention, access-control, routing, and operating exercises remain pending.
 
 - Unit-test the field allowlist and reject every unknown or free-form field.
 - Use synthetic fixed-code events to test each threshold and alert route.
