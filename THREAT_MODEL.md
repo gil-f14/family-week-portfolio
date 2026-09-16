@@ -14,6 +14,7 @@
 5. Make interrupted or repeated operations safe to retry.
 6. Preserve a reviewable audit trail without logging sensitive event content.
 7. Prevent generated artifacts and public documentation from exposing private operational identifiers.
+8. Prevent synthetic OCR evidence, thresholds, or baselines from being altered to create a false release signal.
 
 ## Assets and sensitivity
 
@@ -26,6 +27,7 @@
 | Family Dictionary and local draft | Moderate to high | Device-local storage, strict size limits, clear-device recovery guidance |
 | Application source and deployment configuration | High | Private repository, restricted deployment access, secret scanning |
 | Generated build output and private hosting manifest | High | Post-build privacy checks, explicit private-only classification, exclusion from public and distribution packages |
+| Synthetic OCR manifest, results, aggregate record, and approved baseline | High | Fixed schema, integrity linkage, reviewer separation, threshold enforcement, and restricted baseline approval |
 | Sanitized portfolio documents | Public | Release-gate review and exclusion of operational identifiers |
 
 ## Trust boundaries and data flows
@@ -45,7 +47,7 @@ Private application service: authorization, validation, duplicate checks
         +----> Government weather services: user-initiated minimum lookup data
 ```
 
-The browser, application service, identity provider, calendar provider, forecast providers, software supply chain, and public documentation repository are separate trust boundaries. A control in one boundary is not assumed to protect another.
+The browser, application service, identity provider, calendar provider, forecast providers, software supply chain, private assurance-evidence store, and public documentation repository are separate trust boundaries. A control in one boundary is not assumed to protect another.
 
 ## Risk-rating method
 
@@ -64,6 +66,7 @@ Residual priority is a qualitative engineering judgment after considering the co
 | TM-07 | Adversarial input or excessive reads exhaust browser or provider resources | Possible | Moderate | Medium | Image bounds, confidence limits, readable-calendar cap, and fail-closed errors | Measured performance budgets and provider-side throttling review |
 | TM-08 | A keyboard, screen-reader, zoom, motion, or touch user cannot safely review an action | Possible | Major | High | Dialog semantics, focus controls, responsive containment, contrast checks, reduced-motion handling, and explicit review states | Complete the documented manual accessibility and supported-device matrix |
 | TM-09 | Generated build output or a packaged archive reveals a private URL, hosting identifier, local path, source map, or credential-like value | Unlikely | Severe | Medium | Post-build privacy and file-type gate, explicit private-only hosting manifest, relative social metadata, and exclusion of build output from the public portfolio | Human inspection of the exact packaged archive confirming that private-only metadata is excluded before any application distribution |
+| TM-10 | A synthetic OCR manifest, result set, threshold, or baseline is substituted or altered so an unsafe model change appears releasable | Possible | Major | High | Pinned OCR hashes, deterministic forty-case manifest, exact schema, complete-ID validation, numeric-only result records, fail-closed scoring, two-point regression gate, blocked blank record, and separated executor/reviewer roles | Execute the benchmark, verify manifest and result hashes, designate an access-controlled baseline, independently reproduce scoring, and test tamper rejection |
 
 No high-priority row is accepted or closed by this document. The private pilot remains gated by its stated manual checks, and application-source or binary distribution remains blocked separately by the license review.
 
@@ -76,6 +79,7 @@ No high-priority row is accepted or closed by this document. The private pilot r
 - An attacker with access to a lost, shared, or unlocked device.
 - A repository observer searching public history for credentials or personal information.
 - A compromised external service returning malicious or unexpected data.
+- An insider, compromised tool, or accidental process change altering assurance evidence, thresholds, or the selected OCR baseline.
 
 The model assumes the hosting and identity providers enforce their documented platform controls, TLS is correctly implemented, the user's endpoint is not fully compromised, and provider credentials can be revoked. These assumptions require periodic validation.
 
@@ -87,6 +91,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 | Spoofing | User selects an unauthorized write target | Server-side calendar allowlist and app-created-calendar ownership check | Independently test scope and confused-deputy failure cases |
 | Tampering | Event fields or identifiers changed after review | Server validation, bounded fields, reviewed-event requirement, safe identifier validation | Add structured security-event logging without event content |
 | Tampering | Delete races with a later calendar edit | Re-fetch, app-ownership verification, revision comparison, two confirmations | Complete live synthetic concurrency test |
+| Tampering | OCR benchmark evidence or baseline is replaced, truncated, or scored against different assets | Fixed manifest and asset hashes, exact case coverage, code-only results, deterministic scorer, regression comparator, and role-separated record | Execute tamper tests, independently reproduce results, and approve a restricted baseline with a documented change trigger |
 | Repudiation | Calendar mutation cannot be reconstructed | Deterministic identifiers and explicit review flow | Define content-free audit events, retention, access, and deletion policy |
 | Information disclosure | Photograph or OCR text remains on a shared device | Browser-based OCR, no photo upload, bounded local draft, and a two-step app-scoped device reset | Verify the reset on supported devices and educate shared-device users to run it |
 | Information disclosure | OAuth credential or calendar content reaches logs or public source | Sealed credential, private source, no-sensitive-logging rule, history scans, public release gate | Add automated log-field tests and an incident response exercise |
@@ -109,6 +114,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 | Local storage is malformed or oversized | Normalize, bound, or discard it without sending it elsewhere |
 | A public-document scan detects sensitive data | Stop publication, contain access, rotate credentials if needed, and clean history before republishing |
 | A generated-artifact scan detects a private identifier or unsafe file | Stop release, remove or isolate the value, rebuild, and rerun the full gate; never waive the private-only hosting manifest into a distribution package |
+| A benchmark reference, asset hash, case count, threshold, or approved baseline does not match | Stop scoring and release review; do not repair evidence by hand; regenerate from the approved synthetic source and require independent verification |
 
 ## Highest residual risks
 
@@ -118,7 +124,8 @@ The model assumes the hosting and identity providers enforce their documented pl
 4. **TM-02:** live create, duplicate, retry, revision-conflict, and delete behavior still requires an approved synthetic end-to-end test.
 5. **TM-05:** an independent penetration test, requirement-by-requirement OWASP ASVS review, and qualified distribution-license review have not been performed.
 6. **TM-09:** the exact application-distribution archive has not been independently inspected; the expected private hosting manifest remains non-distributable.
-7. Privacy-safe operational monitoring and audit retention are not fully defined.
+7. **TM-10:** no synthetic OCR run or approved access-controlled baseline exists yet, so benchmark integrity controls have not been exercised operationally.
+8. Privacy-safe operational monitoring and audit retention are not fully defined.
 
 ## Verification plan
 
@@ -126,6 +133,7 @@ The model assumes the hosting and identity providers enforce their documented pl
 - Run the generated-artifact privacy and file-type gate, then manually inspect the exact packaged archive before any application distribution.
 - Test OAuth expiry, disconnect, revocation, and callback failure without exposing tokens.
 - Use a disposable synthetic event to test create, duplicate detection, interrupted retry, update conflict, and two-stage delete.
+- Execute only the approved synthetic OCR manifest, verify manifest/result/asset hashes, independently reproduce scoring, and test altered-reference, missing-case, threshold, and baseline rejection before approving a baseline.
 - Test keyboard-only operation, screen readers, zoom/reflow, orientation, contrast, reduced motion, and touch targets on supported devices.
 - Verify the application remains private and that only the dedicated calendar accepts mutations.
 - Revisit this model after any authentication, storage, telemetry, synchronization, weather, place-search, or sharing change.
@@ -140,4 +148,4 @@ The model assumes the hosting and identity providers enforce their documented pl
 
 ## Review triggers
 
-Update and reapprove this threat model when the application adds a new identity, external API, server-side storage system, synchronization path, shared-device role, public endpoint, sensitive log, or source-distribution channel—or when a security incident invalidates an assumption.
+Update and reapprove this threat model when the application adds a new identity, external API, server-side storage system, synchronization path, shared-device role, public endpoint, sensitive log, OCR model or benchmark, approved baseline, assurance-data store, or source-distribution channel—or when a security incident invalidates an assumption.
