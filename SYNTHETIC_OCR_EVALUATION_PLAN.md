@@ -10,6 +10,8 @@ Create an independently invented benchmark containing no real household names, i
 
 Store only approved synthetic images, their ground-truth text, case metadata, and results. Do not derive examples from production photos, browser storage, support conversations, screenshots, clipboard history, or calendar content.
 
+The private repository includes a fail-closed manifest validator for release-grade benchmark metadata. It accepts only fixed synthetic subject and location codes, two role-only reviewer labels, bounded hashes and references, the approved condition vocabulary, unique synthetic case identifiers, complete matrix coverage, and at least forty cases. It rejects free-form identity fields and any blocking ambiguity that is not marked for correction. This validates manifest structure; it does not execute or validate the benchmark itself.
+
 ## Dataset matrix
 
 The first benchmark target is at least forty independently created images, balanced across these conditions:
