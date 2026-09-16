@@ -12,6 +12,8 @@ Store only approved synthetic images, their ground-truth text, case metadata, an
 
 The private repository includes a fail-closed manifest validator for release-grade benchmark metadata. It accepts only fixed synthetic subject and location codes, two role-only reviewer labels, bounded hashes and references, the approved condition vocabulary, unique synthetic case identifiers, complete matrix coverage, and at least forty cases. It rejects free-form identity fields and any blocking ambiguity that is not marked for correction. This validates manifest structure; it does not execute or validate the benchmark itself.
 
+A deterministic private manifest template now supplies forty synthetic case IDs, complete matrix coverage, fixed ground-truth codes, correction requirements, and the hashes of the four pinned OCR assets. The release gate rejects a stale template or an invalid manifest. The template contains no images or measured OCR results, so benchmark execution and accuracy conclusions remain pending.
+
 ## Dataset matrix
 
 The first benchmark target is at least forty independently created images, balanced across these conditions:
