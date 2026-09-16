@@ -40,7 +40,7 @@ This document is an engineering control record, not a legal determination or cla
 | An uncertain OCR result becomes a real event | Confidence gate, visible uncertainty, editable review, and explicit approval | Complete the approved synthetic end-to-end test and monitor false-ready results without retaining event content |
 | More calendar data is read or changed than intended | Least-privilege scopes, bounded overlays, server-side target restrictions, duplicate checks, and protected deletion | Independently review OAuth configuration and test disconnect, revocation, and confused-deputy cases |
 | Location is disclosed to an external service unexpectedly | Forecast lookup is explicit, labeled, and restricted to approved official hosts | Add a provider-retention reassessment before automatic weather or place autocomplete |
-| Operational records leak household details | No-sensitive-logging rule, sanitized evidence, automated public-release gate | Add content-free logging tests and approve retention/access rules before operational telemetry |
+| Operational records leak household details | No-sensitive-logging rule, runtime source guard against console/logger/beacon/telemetry SDK paths, sanitized evidence, and automated public-release gate | Inspect provider-default logs and approve retention/access rules before operational telemetry |
 | A public portfolio reveals an identity or system detail | Separate documentation-only repository, synthetic language, history scans, and manual release gate | Repeat human contextual review before every public media or document update |
 
 ## Notice and choice

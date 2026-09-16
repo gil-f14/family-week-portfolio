@@ -55,6 +55,8 @@ Thresholds are conservative private-pilot starting points. They must be tuned fr
 
 A pure local module now accepts only the seven approved fields, exact event and reason allowlists, rounded timestamps, fixed duration buckets, bounded release references, and non-negative integer counts. It produces fixed severity codes for the documented deployment, access, OAuth, calendar-read, wrong-target mutation, release-gate, and dependency-integrity thresholds. Unknown fields and free-form values fail closed without echoing the rejected content. The module has no storage, network, logging, calendar, alert-delivery, or recovery side effects.
 
+An automated source boundary rejects console logging, generic logger calls, browser beacon delivery, and imports from common telemetry SDKs anywhere in application, library, or worker runtime code. The prior client-side OCR error object is no longer written to the browser console. This prevents accidental application-code logging; it does not verify hosting, identity-provider, network-edge, browser, or calendar-provider logs.
+
 ## Retention and access target
 
 | Record | Starting retention target | Access |
