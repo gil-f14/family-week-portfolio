@@ -72,6 +72,8 @@ Retention starts only after the owner approves the monitoring implementation and
 
 ## Verification before activation
 
+The prepared [synthetic monitoring validation plan](SYNTHETIC_MONITORING_VALIDATION.md) defines the required schema, threshold, retention, access, and fail-safe cases without enabling collection or external alert delivery.
+
 - Unit-test the field allowlist and reject every unknown or free-form field.
 - Use synthetic fixed-code events to test each threshold and alert route.
 - Confirm alerts contain none of the prohibited content categories.
