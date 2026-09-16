@@ -14,6 +14,8 @@ The private repository includes a fail-closed manifest validator for release-gra
 
 A deterministic private manifest template now supplies forty synthetic case IDs, complete matrix coverage, fixed ground-truth codes, correction requirements, and the hashes of the four pinned OCR assets. The release gate rejects a stale template or an invalid manifest. The template contains no images or measured OCR results, so benchmark execution and accuracy conclusions remain pending.
 
+A pure private evaluator now accepts only a complete result set bound to the same benchmark, application reference, and OCR asset hashes. It rejects free-form subjects and locations, missing or duplicate case IDs, invalid counts, and mismatched evidence. It calculates aggregate character error, word, structured-field, day, time, all-day, duplicate, unsafe-pass, and correction-load measures and applies the engineering release thresholds below. This tests the scoring logic only; no benchmark results have been produced.
+
 ## Dataset matrix
 
 The first benchmark target is at least forty independently created images, balanced across these conditions:
@@ -25,7 +27,7 @@ The first benchmark target is at least forty independently created images, balan
 | Capture | Straight, mild rotation, perspective, shadow, glare, low contrast, and background clutter |
 | Ink | Dark, light, red, blue, green, and mixed colors |
 | Content | Names, activity words, dates, single times, ranges, AM/PM, locations, and all-day notes |
-| Safety edge | Ambiguous digit, missing meridiem, overwritten time, unreadable word, duplicate item, and conflicting day heading |
+| Safety edge | Ambiguous digit, missing meridiem, overwritten time, unreadable word, duplicate item, and conflicting day heading; every ambiguous-time or unreadable case must be marked for correction |
 
 Every case receives a stable synthetic ID and records only its declared conditions. Do not encode a person, device, creator, or household identifier in the ID.
 
